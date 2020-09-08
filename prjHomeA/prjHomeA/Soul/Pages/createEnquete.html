@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../CSS/suport.css" rel="stylesheet" type="text/css" />
     <link href="../CSS/heading.css" rel="stylesheet" type="text/css" />
+    <link href="../CSS/createEnquete.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -16,9 +17,28 @@
         <div class="left-align">
             <i class="material-icons" style="font-size: 90px; padding: 30px">arrow_back</i>
         </div>
-        <div class="right-align" style="font-size:60px; font-family:Comic Sans MS; padding: 30px;">Criar Enquete</div>
+        <div class="right-align" style="font-size:70px; padding: 30px;">Criar Enquete</div>
+        <div class="clear-align"></div>
 
     </header>
+    <main>
+        <form id="formCreateFullEnquete">
+            <div class="bgBlanc">
+                <div class="titleDS">
+                    <input type="text" class="generalEnqueteText" id="formTitleEnquete" placeholder="Título da Enquete" required />
+                    <br />
+                    <textarea class="generalEnqueteText" cols="5" rows="1" id="formDsEnquete" placeholder="Descrição da Enquete" required></textarea>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </main>
+    <script src="..\JohannSebastian\jquery-3.5.1.min.js"></script>
+    <script src="..\JohannSebastian\autoresize.jquery.js"></script>
+    <script src="..\JohannSebastian\createEnquete.js"></script>
 
 </body>
 

@@ -1,0 +1,52 @@
+﻿/*Declaração de variáveis para cores*/
+:root {
+  --bgColor: #5BF8E4; 
+  --headerColor: #52D299; 
+  --intervalColor: #86E9BD;
+  }
+
+/*Declaração do suporte da página*/
+main{
+    width: 100%;
+    color: Black;
+}
+
+/*Declarações sobre o Formulário de Questões*/
+.titleDS
+{
+    width: 100%;
+    position: relative;
+    padding: 50px;
+    padding-top: 10px;
+    color: Black; 
+      
+}
+.generalEnqueteText
+{
+    margin-top: 30px;
+    border-bottom: black 2px solid;    
+    border-top: hidden;
+    border-left: hidden;
+    background-color: transparent;
+    border-right: hidden;
+    width: 100%;
+    font-size: 60px;
+    
+}
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
+/*Definição dos intervalos de cores claras e escuras*/
+.bgBlanc{
+    background-color: red /*var(--bgColor)*/ !important;
+    padding: -5px !important;
+    width: 120% !important;
+    
+}
+.bgNoire{
+    background-color: var(--intervalColor) !important;
+    
+}
+

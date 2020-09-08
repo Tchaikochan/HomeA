@@ -66,6 +66,7 @@ textarea:focus, input:focus, select:focus {
     
 }
 
+/*Impedir botão Salvar de bloquear a aparição do conteúdo*/
 #Block{
     width: 10px;
     position: relative;
@@ -86,3 +87,5 @@ textarea:focus, input:focus, select:focus {
     background-color: var(--headerColor);
     
 }
+
+/*Perguntas*/

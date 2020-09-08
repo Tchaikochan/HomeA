@@ -42,7 +42,7 @@ textarea:focus, input:focus, select:focus {
 } 
 /*Definição dos intervalos de cores claras e escuras*/
 .bgBlanc{
-    background-color: pink /*var(--bgColor)*/ !important;
+    background-color: var(--bgColor) !important;
     padding: -5px !important;
     width: 100% !important;
     
@@ -52,3 +52,37 @@ textarea:focus, input:focus, select:focus {
     
 }
 
+/*Botões*/
+
+/*Botão de adicionar pergunta na enquete*/
+#NovaPergunta{
+    width: 97.8%;
+    position: relative;
+    padding: 10px;
+    color: Black;
+    font-size: 50px;
+    text-align: center;
+    border: 1px solid black;
+    
+}
+
+#Block{
+    width: 10px;
+    position: relative;
+    height: 80px;
+    padding: 10px;
+    
+}
+/*Botão de salvar a enquete*/
+#SalvarBotão{
+    width: 100%;
+    position: fixed;
+    bottom: 0%;
+    padding: 10px;
+    color: Black;
+    font-size: 50px;
+    text-align: center;
+    border: 1px solid black;
+    background-color: var(--headerColor);
+    
+}

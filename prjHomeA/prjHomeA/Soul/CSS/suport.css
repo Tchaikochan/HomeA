@@ -1,0 +1,13 @@
+﻿/*Utilizadas para alinhar um conteúdo na página*/
+.left-align
+{
+    text-align: left;
+    float: left;
+    
+}
+.right-align
+{
+    text-align: right;
+    float: right;
+    
+}

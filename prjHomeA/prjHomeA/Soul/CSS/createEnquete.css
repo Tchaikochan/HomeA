@@ -30,7 +30,7 @@ main{
     border-left: hidden;
     background-color: transparent;
     border-right: hidden;
-    width: 90%;
+    width: 95%;
     font-size: 60px;
     font-family: Comic Sans MS;
     
@@ -43,22 +43,19 @@ textarea:focus, input:focus, select:focus {
 /*Definição dos intervalos de cores claras e escuras*/
 .bgBlanc{
     background-color: var(--bgColor) !important;
-    padding: -5px !important;
-    width: 100% !important;
     
 }
 .bgNoire{
     background-color: var(--intervalColor) !important;
-    
 }
 
 /*Botões*/
 
 /*Botão de adicionar pergunta na enquete*/
 #NovaPergunta{
-    width: 97.8%;
+    width: 100%;
     position: relative;
-    padding: 10px;
+    padding: 0px;
     color: Black;
     font-size: 50px;
     text-align: center;
@@ -79,7 +76,6 @@ textarea:focus, input:focus, select:focus {
     width: 100%;
     position: fixed;
     bottom: 0%;
-    padding: 10px;
     color: Black;
     font-size: 50px;
     text-align: center;
@@ -89,3 +85,24 @@ textarea:focus, input:focus, select:focus {
 }
 
 /*Perguntas*/
+.questionBA{
+    background-color: transparent;
+    padding-left: 50px;
+    width: 90%;
+    font-size: 40px;
+    font-family: Comic Sans MS;
+
+}
+.generalQuestionsText
+{
+    margin-top: 30px;
+    border-bottom: black 2px solid;    
+    border-top: hidden;
+    border-left: hidden;
+    background-color: transparent;
+    border-right: hidden;
+    width: 80%;
+    font-size: 60px;
+    font-family: Comic Sans MS;
+    
+}

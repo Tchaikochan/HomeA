@@ -9,12 +9,13 @@
 main{
     width: 100%;
     color: Black;
+    font-family: Comic Sans MS;
 }
 
 /*Declarações sobre o Formulário de Questões*/
 .titleDS
 {
-    width: 100%;
+    width: 80%;
     position: relative;
     padding: 50px;
     padding-top: 10px;
@@ -29,8 +30,9 @@ main{
     border-left: hidden;
     background-color: transparent;
     border-right: hidden;
-    width: 100%;
+    width: 90%;
     font-size: 60px;
+    font-family: Comic Sans MS;
     
 }
 textarea:focus, input:focus, select:focus {
@@ -40,9 +42,9 @@ textarea:focus, input:focus, select:focus {
 } 
 /*Definição dos intervalos de cores claras e escuras*/
 .bgBlanc{
-    background-color: red /*var(--bgColor)*/ !important;
+    background-color: pink /*var(--bgColor)*/ !important;
     padding: -5px !important;
-    width: 120% !important;
+    width: 100% !important;
     
 }
 .bgNoire{

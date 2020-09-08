@@ -50,7 +50,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CSS\heading.css" />
+    <Content Include="Soul\CSS\createEnquete.css" />
+    <Content Include="Soul\CSS\heading.css" />
+    <Content Include="Soul\CSS\suport.css" />
+    <Content Include="Soul\JohannSebastian\createEnquete.js" />
+    <Content Include="Soul\JohannSebastian\createEnqueteController.js" />
     <Content Include="Soul\Pages\createEnquete.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

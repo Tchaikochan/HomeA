@@ -1,5 +1,15 @@
 ﻿class EnqueteController{
-    constructor{
+    constructor(){
+        
+    }
+
+    Init(){
+        
+
+    }
+
+    addEventListenerAll(){
+
 
     }
 

@@ -4,6 +4,7 @@
         this._daddyDJ;
         this._NambaToEdit;
         this._selects = document.querySelectorAll(".SelectTypeForm");
+        this._alter = document.querySelectorAll(".alternativa");
         
         this.Init();
         this.addSelect();
@@ -41,13 +42,12 @@
                 <br /><br />
                 <select class="SelectTypeForm" id="SelectTypeForm-${this._questionNumber}">
                     <option value="radio">Alternativa</option>
-                    <option value="select">Caixa Suspensa</option>
                     <option value="text">Texto</option>
                 </select>
                     <br /><br />
                 <div class="RadioTyper">
-                    <input type="radio" id="alternativa0-${this._questionNumber}" name="${this._questionNumber}" value="alternativa0-${this._questionNumber}" checked /> <label for="alternativa0-${this._questionNumber}">ㅤAlternativa 1</label> <br />
-                    <input type="radio" id="alternativa1-${this._questionNumber}" name="${this._questionNumber}" value="alternativa1-${this._questionNumber}" /> <label for="alternativa1-${this._questionNumber}">ㅤAlternativa 2</label> <br />
+                    <input type="radio" id="alternativa0-${this._questionNumber}" name="${this._questionNumber}" value="alternativa0-${this._questionNumber}" checked /> <label class="alternativa" id="alternative0-${this._questionNumber}"for="alternativa0-${this._questionNumber}">ㅤAlternativa 1</label> <br />
+                    <input type="radio" id="alternativa1-${this._questionNumber}" name="${this._questionNumber}" value="alternativa1-${this._questionNumber}" /> <label class="alternativa" id="alternative1-${this._questionNumber}" for="alternativa1-${this._questionNumber}">ㅤAlternativa 2</label> <br />
                 </div>
                 <br />
             </div>
@@ -66,6 +66,7 @@
                 }
                 this._questionNumber++;
                 this.addSelect();
+                this.addAlter();
 
         });
 
@@ -95,7 +96,6 @@
                 <br /><br />
                 <select class="SelectTypeForm" id="SelectTypeForm-${this._NambaToEdit}">
                     <option value="radio">Alternativa</option>
-                    <option value="select">Caixa Suspensa</option>
                     <option value="text">Texto</option>
                 </select>
                     <br /><br />
@@ -114,7 +114,6 @@
                 <select class="SelectTypeForm" id="SelectTypeForm-${this._NambaToEdit}">
                     <option value="text">Texto</option>    
                     <option value="radio">Alternativa</option>
-                    <option value="select">Caixa Suspensa</option>
                 </select>
                     <br /><br />
                 <div class="RadioTyper">
@@ -125,6 +124,22 @@
             `
         }
         this.addSelect();
+        this.addAlter();
+
+    }
+
+    addAlter(){
+        this._alter = document.querySelectorAll(".alternativa");
+        this._alter.forEach(element => {
+            element.addEventListener("click",e=>{
+                console.log(element);
+                this._daddyDJ = element.parentNode;
+                this._NambaToEdit = this._daddyDJ.classList.toString().substring(this._daddyDJ.classList.toString().indexOf("-") + 1);
+                this.addTypes(element);
+
+            });
+            
+        });
 
     }
 

@@ -46,8 +46,8 @@
                 </select>
                     <br /><br />
                 <div class="RadioTyper">
-                    <input type="radio" id="alternativa0-${this._questionNumber}" name="${this._questionNumber}" value="alternativa0-${this._questionNumber}" checked /> <label class="alternativa" id="alternative0-${this._questionNumber}"for="alternativa0-${this._questionNumber}">ㅤAlternativa 1</label> <br />
-                    <input type="radio" id="alternativa1-${this._questionNumber}" name="${this._questionNumber}" value="alternativa1-${this._questionNumber}" /> <label class="alternativa" id="alternative1-${this._questionNumber}" for="alternativa1-${this._questionNumber}">ㅤAlternativa 2</label> <br />
+                    <div class="alternativa"><input type="radio" id="alternativa0-${this._questionNumber}" name="${this._questionNumber}" value="alternativa0-${this._questionNumber}" checked /> <label id="alternative0-${this._questionNumber}"for="alternativa0-${this._questionNumber}">ㅤAlternativa 1</label> </div> <br />
+                    <div class="alternativa"> <input type="radio" id="alternativa1-${this._questionNumber}" name="${this._questionNumber}" value="alternativa1-${this._questionNumber}" /> <label id="alternative1-${this._questionNumber}" for="alternativa1-${this._questionNumber}">ㅤAlternativa 2</label> </div> <br />
                 </div>
                 <br />
             </div>
@@ -76,7 +76,6 @@
         this._selects = document.querySelectorAll(".SelectTypeForm");
         this._selects.forEach(element => {
             element.addEventListener("change",e=>{
-                console.log(element.value);
                 this._daddyDJ = element.parentNode;
                 this._NambaToEdit = this._daddyDJ.classList.toString().substring(this._daddyDJ.classList.toString().indexOf("-") + 1);
                 this.addTypes(element);
@@ -129,13 +128,14 @@
     }
 
     addAlter(){
+        let dio = 0;
         this._alter = document.querySelectorAll(".alternativa");
-        this._alter.forEach(element => {
-            element.addEventListener("click",e=>{
-                console.log(element);
-                this._daddyDJ = element.parentNode;
+        this._alter.forEach(elementar => {
+            elementar.addEventListener("click",e=>{
+                console.log(elementar + dio);
+                dio++;
+                this._daddyDJ = elementar.parentNode;
                 this._NambaToEdit = this._daddyDJ.classList.toString().substring(this._daddyDJ.classList.toString().indexOf("-") + 1);
-                this.addTypes(element);
 
             });
             

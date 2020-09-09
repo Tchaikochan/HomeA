@@ -93,6 +93,8 @@ textarea:focus, input:focus, select:focus {
     font-family: Comic Sans MS;
 
 }
+
+/*Define CSS das perguntas geradas dinamicamente*/
 .generalQuestionsText
 {
     margin-top: 30px;
@@ -106,6 +108,7 @@ textarea:focus, input:focus, select:focus {
     font-family: Comic Sans MS;
 
 }
+
 .btnBlock{
     border: none /*black solid 1px*/;
     height: 80px;
@@ -120,3 +123,13 @@ textarea:focus, input:focus, select:focus {
     right: 0%;
 
 }
+
+  /*Janela para selecionar tipo de questões*/
+  #SelectTypeForm{
+      width: 95%;
+      height: 80px;
+      font-size: 30px;
+      text-align: center;
+      border-radius: 40px;
+  
+  }

@@ -34,7 +34,12 @@
             Question.innerHTML = `
             <div class="questionBA">
                 <input type="text" class="generalQuestionsText" id="formTitleEnquete" placeholder="Digite Sua Pergunta">
-                <div class="divAbsoluta"><input type="button" style="position: absolute; z-index: 5; right: 0%;" class="btnBlock" name="Icon${this._questionNumber}" onclick="OpConfig(this.name)" value=""><i class="material-icons edition" style="font-size: 80px; position: absolute; right: 0%;">create</i></div>
+                <br /><br />
+                <select id="SelectTypeForm">
+                    <option value="radio">Alternativa</option>
+                    <option value="select">Caixa Suspensa</option>
+                    <option value="text">Texto</option>
+                </select>
                     <br /><br /><br />
             </div>
             `;

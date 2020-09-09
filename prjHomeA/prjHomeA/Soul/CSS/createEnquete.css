@@ -125,11 +125,22 @@ textarea:focus, input:focus, select:focus {
 }
 
   /*Janela para selecionar tipo de questões*/
-  #SelectTypeForm{
+  .SelectTypeForm{
       width: 95%;
       height: 80px;
       font-size: 30px;
       text-align: center;
       border-radius: 40px;
   
+  }
+  /*Fonte dos Radios*/
+  .RadioTyper{
+    font-size: 40px;
+
+  }
+  input[type="radio"]{
+    -ms-transform: scale(3.5); 
+    -webkit-transform: scale(3.5); 
+    transform: scale(3.5);
+
   }

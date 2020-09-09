@@ -2,7 +2,8 @@
     constructor(){
         this._questionNumber = 2;
         this.Init();
-        
+        this._selects = document.querySelectorAll(".SelectTypeForm");
+    
     }
 
     verifPar(Namba){
@@ -32,15 +33,20 @@
             }
             Question.id = "L" + this._questionNumber.toString();
             Question.innerHTML = `
-            <div class="questionBA">
+            <div class="questionBA-${this._questionNumber}">
                 <input type="text" class="generalQuestionsText" id="formTitleEnquete" placeholder="Digite Sua Pergunta">
                 <br /><br />
-                <select id="SelectTypeForm">
+                <select class="SelectTypeForm" id="SelectTypeForm-${this._questionNumber}">
                     <option value="radio">Alternativa</option>
                     <option value="select">Caixa Suspensa</option>
                     <option value="text">Texto</option>
                 </select>
-                    <br /><br /><br />
+                    <br /><br />
+                <div class="RadioTyper">
+                    <input type="radio" id="alternativa0-${this._questionNumber}" name="${this._questionNumber}" value="alternativa0-${this._questionNumber}" checked /> <label for="alternativa0-${this._questionNumber}">ㅤAlternativa 1</label> <br />
+                    <input type="radio" id="alternativa1-${this._questionNumber}" name="${this._questionNumber}" value="alternativa1-${this._questionNumber}" /> <label for="alternativa1-${this._questionNumber}">ㅤAlternativa 2</label> <br />
+                </div>
+                <br />
             </div>
             `;
                 document.querySelector("#formCreateFullEnquete").appendChild(Question);
@@ -56,6 +62,21 @@
 
                 }
                 this._questionNumber++;
+
+                this.addSelect();
+        });
+
+    }
+
+    addSelect(){
+        this._selects = document.querySelectorAll(".SelectTypeForm");
+        this._selects.forEach(element => {
+            element.addEventListener("change",e=>{
+                console.log(element.value);
+                var daddyDJ = element.parentNode;
+
+            });
+            
         });
 
     }

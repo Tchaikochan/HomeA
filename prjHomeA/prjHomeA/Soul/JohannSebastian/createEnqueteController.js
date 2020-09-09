@@ -47,7 +47,7 @@
                     <br /><br />
                 <div class="RadioTyper">
                     <div class="alternativa"><input type="radio" id="alternativa0-${this._questionNumber}" name="${this._questionNumber}" value="alternativa0-${this._questionNumber}" checked /> <label id="alternative0-${this._questionNumber}"for="alternativa0-${this._questionNumber}">ㅤAlternativa 1</label> </div> <br />
-                    <div class="alternativa"> <input type="radio" id="alternativa1-${this._questionNumber}" name="${this._questionNumber}" value="alternativa1-${this._questionNumber}" /> <label id="alternative1-${this._questionNumber}" for="alternativa1-${this._questionNumber}">ㅤAlternativa 2</label> </div> <br />
+                    <div class="alternativa"><input type="radio" id="alternativa1-${this._questionNumber}" name="${this._questionNumber}" value="alternativa1-${this._questionNumber}" /> <label id="alternative1-${this._questionNumber}" for="alternativa1-${this._questionNumber}">ㅤAlternativa 2</label> </div> <br />
                 </div>
                 <br />
             </div>
@@ -99,8 +99,8 @@
                 </select>
                     <br /><br />
                 <div class="RadioTyper">
-                    <input type="radio" id="alternativa0-${this._NambaToEdit}" name="${this._NambaToEdit}" value="alternativa0-${this._NambaToEdit}" checked /> <label for="alternativa0-${this._NambaToEdit}">ㅤAlternativa 1</label> <br />
-                    <input type="radio" id="alternativa1-${this._NambaToEdit}" name="${this._NambaToEdit}" value="alternativa1-${this._NambaToEdit}" /> <label for="alternativa1-${this._NambaToEdit}">ㅤAlternativa 2</label> <br />
+                <div class="alternativa"><input type="radio" id="alternativa0-${this._NambaToEdit}" name="${this._NambaToEdit}" value="alternativa0-${this._NambaToEdit}" checked /> <label for="alternativa0-${this._NambaToEdit}">ㅤAlternativa 1</label> </div> <br />
+                <div class="alternativa"><input type="radio" id="alternativa1-${this._NambaToEdit}" name="${this._NambaToEdit}" value="alternativa1-${this._NambaToEdit}" /> <label for="alternativa1-${this._NambaToEdit}">ㅤAlternativa 2</label> </div> <br />
                 </div>
                 <br />
             `

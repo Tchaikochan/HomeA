@@ -104,5 +104,19 @@ textarea:focus, input:focus, select:focus {
     width: 80%;
     font-size: 60px;
     font-family: Comic Sans MS;
-    
+
+}
+.btnBlock{
+    border: none /*black solid 1px*/;
+    height: 80px;
+    width: 80px;
+    background-color: red;
+    background: url('../Image/pencil-edit-button.png');
+
+}
+
+.divAbsoluta{
+    position: relative;
+    right: 0%;
+
 }

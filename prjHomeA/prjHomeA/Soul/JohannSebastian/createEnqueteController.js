@@ -31,13 +31,11 @@
 
             }
             Question.id = "L" + this._questionNumber.toString();
-            
-            this._questionNumber++;
             Question.innerHTML = `
             <div class="questionBA">
-            <input type="text" class="generalQuestionsText" id="formTitleEnquete" placeholder="Digite Sua Pergunta">
-                <i class="material-icons" style="font-size: 80px; padding: 40px;">create</i>
-                <br /><br /><br />
+                <input type="text" class="generalQuestionsText" id="formTitleEnquete" placeholder="Digite Sua Pergunta">
+                <div class="divAbsoluta"><input type="button" style="position: absolute; z-index: 5; right: 0%;" class="btnBlock" name="Icon${this._questionNumber}" onclick="OpConfig(this.name)" value=""><i class="material-icons edition" style="font-size: 80px; position: absolute; right: 0%;">create</i></div>
+                    <br /><br /><br />
             </div>
             `;
                 document.querySelector("#formCreateFullEnquete").appendChild(Question);
@@ -52,8 +50,8 @@
                     btnNewPergunta.style.backgroundColor = "#86E9BD";
 
                 }
-
-        })
+                this._questionNumber++;
+        });
 
     }
 

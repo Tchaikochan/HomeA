@@ -136,6 +136,7 @@ textarea:focus, input:focus, select:focus {
   /*Fonte dos Radios*/
   .RadioTyper{
     font-size: 40px;
+    margin-left: 20px;
 
   }
   input[type="radio"]{

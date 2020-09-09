@@ -1,9 +1,12 @@
 ﻿class EnqueteController{
     constructor(){
         this._questionNumber = 2;
-        this.Init();
+        this._daddyDJ;
+        this._NambaToEdit;
         this._selects = document.querySelectorAll(".SelectTypeForm");
-    
+        
+        this.Init();
+        this.addSelect();
     }
 
     verifPar(Namba){
@@ -33,7 +36,7 @@
             }
             Question.id = "L" + this._questionNumber.toString();
             Question.innerHTML = `
-            <div class="questionBA-${this._questionNumber}">
+            <div class="questionBA questionBA-${this._questionNumber}">
                 <input type="text" class="generalQuestionsText" id="formTitleEnquete" placeholder="Digite Sua Pergunta">
                 <br /><br />
                 <select class="SelectTypeForm" id="SelectTypeForm-${this._questionNumber}">
@@ -62,8 +65,8 @@
 
                 }
                 this._questionNumber++;
-
                 this.addSelect();
+
         });
 
     }
@@ -73,11 +76,55 @@
         this._selects.forEach(element => {
             element.addEventListener("change",e=>{
                 console.log(element.value);
-                var daddyDJ = element.parentNode;
+                this._daddyDJ = element.parentNode;
+                this._NambaToEdit = this._daddyDJ.classList.toString().substring(this._daddyDJ.classList.toString().indexOf("-") + 1);
+                this.addTypes(element);
 
             });
             
         });
+
+    }
+
+    addTypes(element){
+        switch (element.value) {
+            case 'radio':
+                this._daddyDJ.innerHTML =
+                `
+                <input type="text" class="generalQuestionsText" id="formTitleEnquete" placeholder="Digite Sua Pergunta">
+                <br /><br />
+                <select class="SelectTypeForm" id="SelectTypeForm-${this._NambaToEdit}">
+                    <option value="radio">Alternativa</option>
+                    <option value="select">Caixa Suspensa</option>
+                    <option value="text">Texto</option>
+                </select>
+                    <br /><br />
+                <div class="RadioTyper">
+                    <input type="radio" id="alternativa0-${this._NambaToEdit}" name="${this._NambaToEdit}" value="alternativa0-${this._NambaToEdit}" checked /> <label for="alternativa0-${this._NambaToEdit}">ㅤAlternativa 1</label> <br />
+                    <input type="radio" id="alternativa1-${this._NambaToEdit}" name="${this._NambaToEdit}" value="alternativa1-${this._NambaToEdit}" /> <label for="alternativa1-${this._NambaToEdit}">ㅤAlternativa 2</label> <br />
+                </div>
+                <br />
+            `
+                break;
+            case 'text':
+                this._daddyDJ.innerHTML =
+                `
+                <input type="text" class="generalQuestionsText" id="formTitleEnquete" placeholder="Digite Sua Pergunta">
+                <br /><br />
+                <select class="SelectTypeForm" id="SelectTypeForm-${this._NambaToEdit}">
+                    <option value="text">Texto</option>    
+                    <option value="radio">Alternativa</option>
+                    <option value="select">Caixa Suspensa</option>
+                </select>
+                    <br /><br />
+                <div class="RadioTyper">
+                <textarea class="generalEnqueteText" cols="5" rows="1" id="alternativa0-${this._NambaToEdit}"></textarea>
+                    
+                </div>
+                <br />
+            `
+        }
+        this.addSelect();
 
     }
 

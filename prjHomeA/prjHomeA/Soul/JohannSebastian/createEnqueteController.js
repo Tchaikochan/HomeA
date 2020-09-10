@@ -5,12 +5,16 @@
         this._NambaToEdit;
         this._selects = document.querySelectorAll(".SelectTypeForm");
         this._alter = document.querySelectorAll(".alternativa");
-        this.Title = document.querySelector("#formTitleEnquete");
+        this.Titles = document.querySelector("#formTitleEnquete");
 
         this.Init();
         this.addSelect();
     }
 
+
+    get displayTitles(){
+        return this.Titles.value;
+    }
 
     verifPar(Namba){
         if (Namba % 2 == 0) {

@@ -5,7 +5,8 @@ var SaveAs = document.querySelector("#SalvarBotão");
 
 SaveAs.addEventListener('click',e=>{
     var Titulo = document.querySelector("#formTitleEnquete").value;
-            $.post("createEnquete.aspx",{t:Titulo},function(callbacku){
+    var DS = document.querySelector("#formDsEnquete").value;
+            $.post("createEnquete.aspx",{t:Titulo,s:DS},function(callbacku){
             alert(callbacku);
     });
 

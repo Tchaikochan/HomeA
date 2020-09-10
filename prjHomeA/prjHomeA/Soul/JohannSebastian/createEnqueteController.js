@@ -103,7 +103,7 @@
                 <div class="alternativa"><input type="radio" id="alternativa1-${this._NambaToEdit}" name="${this._NambaToEdit}" value="alternativa1-${this._NambaToEdit}" /> <label for="alternativa1-${this._NambaToEdit}">ㅤAlternativa 2</label> </div> <br />
                 </div>
                 <br />
-            `
+            `   
                 break;
             case 'text':
                 this._daddyDJ.innerHTML =

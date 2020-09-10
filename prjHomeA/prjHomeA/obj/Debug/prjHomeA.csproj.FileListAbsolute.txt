@@ -3,3 +3,4 @@ C:\Users\NeroH\OneDrive\Documentos\TCC\HomeA\prjHomeA\prjHomeA\bin\prjHomeA.pdb
 C:\Users\NeroH\OneDrive\Documentos\TCC\HomeA\prjHomeA\prjHomeA\obj\Debug\prjHomeA.dll
 C:\Users\NeroH\OneDrive\Documentos\TCC\HomeA\prjHomeA\prjHomeA\obj\Debug\prjHomeA.pdb
 C:\Users\NeroH\OneDrive\Documentos\TCC\HomeA\prjHomeA\prjHomeA\obj\Debug\prjHomeA.csprojResolveAssemblyReference.cache
+C:\Users\NeroH\OneDrive\Documentos\TCC\HomeA\prjHomeA\prjHomeA\bin\MySql.Data.dll

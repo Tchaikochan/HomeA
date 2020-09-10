@@ -33,6 +33,7 @@ CREATE TABLE Enquete(
 CONSTRAINT pk_enquete PRIMARY KEY (cd_enquete)
 
 );
+INSERT INTO Enquete values ('Querem uma festa de fim de ano?',DATE_FORMAT( "2012/09/09", "%Y/%m/%d" ),0);
 
 CREATE TABLE Pergunta(
   nm_pergunta	VARCHAR(300),

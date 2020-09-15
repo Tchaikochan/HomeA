@@ -106,7 +106,7 @@
                 this._Alters[WhoAmI] = this._Alters[WhoAmI] + 1;
                 //RadioTyper-${this._questionNumber}-2 
 
-            document.querySelector(``).appendChild(Question);
+            document.querySelector(this._daddyDJ).appendChild(Inputer);
 
            });
 

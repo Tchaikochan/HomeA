@@ -1,6 +1,7 @@
 ﻿class EnqueteController{
     constructor(){
         this._questionNumber = 2;
+        this._Altera = [0,0];
         this._daddyDJ;
         this._NambaToEdit;
         this._selects = document.querySelectorAll(".SelectTypeForm");
@@ -42,6 +43,7 @@
 
             }
             Question.id = "L" + this._questionNumber.toString();
+            this._Altera.push(0);
             Question.innerHTML = `
             <div class="questionBA questionBA-${this._questionNumber}">
                 <input type="text" class="generalQuestionsText" id="formTitleEnquete" placeholder="Digite Sua Pergunta">
@@ -51,9 +53,9 @@
                     <option value="text">Texto</option>
                 </select>
                     <br /><br />
-                <div class="RadioTyper">
-                    <div class="alternativa"><input type="radio" id="alternativa0-${this._questionNumber}" name="${this._questionNumber}" value="alternativa0-${this._questionNumber}" checked /> <label id="alternative0-${this._questionNumber}"for="alternativa0-${this._questionNumber}">ㅤAlternativa 1</label> </div> <br />
-                    <div class="alternativa"><input type="radio" id="alternativa1-${this._questionNumber}" name="${this._questionNumber}" value="alternativa1-${this._questionNumber}" /> <label id="alternative1-${this._questionNumber}" for="alternativa1-${this._questionNumber}">ㅤAlternativa 2</label> </div> <br />
+                <div class="RadioTyper RadioTyper-${this._questionNumber}-2">
+                    <div class="alternativa alternativa-${this._questionNumber}" id="alternativa-${this._questionNumber}-${this._Altera[this._questionNumber]}"><input type="radio" id="alternativa0-${this._questionNumber}" name="${this._questionNumber}" value="alternativa0-${this._questionNumber}" checked /> <label id="alternative0-${this._questionNumber}"for="alternativa0-${this._questionNumber}">ㅤAlternativa 1</label> </div> <br />
+                    <div class="alternativa alternativa-${this._questionNumber}" id="alternativa-${this._questionNumber}-${this._Altera[this._questionNumber] = this._Altera[this._questionNumber] + 1}"><input type="radio" id="alternativa1-${this._questionNumber}" name="${this._questionNumber}" value="alternativa1-${this._questionNumber}" /> <label id="alternative1-${this._questionNumber}" for="alternativa1-${this._questionNumber}">ㅤAlternativa 2</label> </div> <br />
                 </div>
                 <br />
             </div>
@@ -73,8 +75,21 @@
                 this._questionNumber++;
                 this.addSelect();
                 this.addAlter();
+                this.formRadio();
 
         });
+
+    }
+
+    formRadio(){
+       let Typer = document.querySelectorAll(".alternativa");
+       Typer.forEach(element => {
+           this.addEventListenerAll(element, 'click drag dblclick',e=>{
+                console.log(element.id);
+
+           });
+
+       });
 
     }
 
@@ -93,6 +108,7 @@
     }
 
     addTypes(element){
+        this._Altera[this._NambaToEdit] = 0;
         switch (element.value) {
             case 'radio':
                 this._daddyDJ.innerHTML =
@@ -104,9 +120,9 @@
                     <option value="text">Texto</option>
                 </select>
                     <br /><br />
-                <div class="RadioTyper">
-                <div class="alternativa"><input type="radio" id="alternativa0-${this._NambaToEdit}" name="${this._NambaToEdit}" value="alternativa0-${this._NambaToEdit}" checked /> <label for="alternativa0-${this._NambaToEdit}">ㅤAlternativa 1</label> </div> <br />
-                <div class="alternativa"><input type="radio" id="alternativa1-${this._NambaToEdit}" name="${this._NambaToEdit}" value="alternativa1-${this._NambaToEdit}" /> <label for="alternativa1-${this._NambaToEdit}">ㅤAlternativa 2</label> </div> <br />
+                <div class="RadioTyper RadioTyper-${this._NambaToEdit}-2">
+                <div id="alternativa-${this._NambaToEdit}-${this._Altera[this._NambaToEdit]}" class="alternativa"><input type="radio" id="alternativa0-${this._NambaToEdit}" name="${this._NambaToEdit}" value="alternativa0-${this._NambaToEdit}" checked /> <label for="alternativa0-${this._NambaToEdit}">ㅤAlternativa 1</label> </div> <br />
+                <div id="alternativa-${this._NambaToEdit}-${this._Altera[this._questionNumber] = this._Altera[this._questionNumber] + 1}" class="alternativa"><input type="radio" id="alternativa1-${this._NambaToEdit}" name="${this._NambaToEdit}" value="alternativa1-${this._NambaToEdit}" /> <label for="alternativa1-${this._NambaToEdit}">ㅤAlternativa 2</label> </div> <br />
                 </div>
                 <br />
             `   

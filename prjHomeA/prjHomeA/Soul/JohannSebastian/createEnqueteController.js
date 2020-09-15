@@ -87,26 +87,34 @@
        let Typer = document.querySelectorAll(".alternativa");
        Typer.forEach(element => {
            this.addEventListenerAll(element, 'click drag dblclick',e=>{
-            this._daddyDJ = element.parentNode;
-                let WhoAmI = this._NambaToEdit = this._daddyDJ.classList.toString().substring(this._daddyDJ.classList.toString().indexOf("-") + 1);
-                WhoAmI = WhoAmI.substring(0,1);
+               console.log(element);
+                if (true) {
+                    this._daddyDJ = element.parentNode;
+                    let WhoAmI = this._NambaToEdit = this._daddyDJ.classList.toString().substring(this._daddyDJ.classList.toString().indexOf("-") + 1);
+                    WhoAmI = WhoAmI.substring(0,1);
 
-                let Inputer = document.createElement('div');
-                Inputer.classList.add("alternativa");
-                Inputer.classList.add(`alternativa-${WhoAmI}`);
-                if (this._Alters[WhoAmI] == 3) {
-                    this._Alters[WhoAmI] = 3;   
+                    let Inputer = document.createElement('div');
+                    Inputer.classList.add("alternativa");
+                    Inputer.classList.add(`alternativa-${WhoAmI}`);
+                    if (this._Alters[WhoAmI] == null) {
+                        this._Alters.push(3);   
+                    }
+
+                    Inputer.id = `alternativa-${WhoAmI}-${this._questionNumber}-${this._Altera[this._questionNumber]}`;
+                    Inputer.innerHTML = 
+                    `
+                    <input type="radio" id="alternativa${this._Alters[WhoAmI]}-${WhoAmI}" name="${WhoAmI}" value="alternativa${this._Alters[WhoAmI]}-${WhoAmI}" /> <label id="alternative${this._Alters[WhoAmI]}-${WhoAmI}" for="alternativa${this._Alters[WhoAmI]}-${WhoAmI}">ㅤAlternativa ${this._Alters[WhoAmI]}</label> <br />
+                    `
+                    this._Alters[WhoAmI] = this._Alters[WhoAmI] + 1;
+                    console.log("dio" + this._Alters[WhoAmI]);
+                    console.log(WhoAmI);
+                    element.parentNode.appendChild(Inputer);
+                    element.parentNode.appendChild(document.createElement('br'));
+
+                    this.addSelect();
+                    this.addAlter();
+                    this.formRadio();
                 }
-
-                Inputer.id = `alternativa-${this._questionNumber}-${this._Altera[this._questionNumber] = this._Altera[this._questionNumber] + 1}`;
-                Inputer.innerHTML = 
-                `
-                <input type="radio" id="alternativa${this._Alters[WhoAmI]}-${WhoAmI}" name="${WhoAmI}" value="alternativa${this._Alters[WhoAmI]}-${WhoAmI}" /> <label id="alternative${this._Alters[WhoAmI]}-${WhoAmI}" for="alternativa${this._Alters[WhoAmI]}-${this._questionNumber}">ㅤAlternativa ${this._Alters[WhoAmI]}</label> 
-                `
-                this._Alters[WhoAmI] = this._Alters[WhoAmI] + 1;
-                //RadioTyper-${this._questionNumber}-2 
-
-            document.querySelector(this._daddyDJ).appendChild(Inputer);
 
            });
 

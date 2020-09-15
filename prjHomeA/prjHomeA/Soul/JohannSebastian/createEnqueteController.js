@@ -2,6 +2,7 @@
     constructor(){
         this._questionNumber = 2;
         this._Altera = [0,0];
+        this._Alters = [0,0];
         this._daddyDJ;
         this._NambaToEdit;
         this._selects = document.querySelectorAll(".SelectTypeForm");
@@ -72,7 +73,7 @@
                     btnNewPergunta.style.backgroundColor = "#86E9BD";
 
                 }
-                
+
                 this._questionNumber++;
                 this.addSelect();
                 this.addAlter();
@@ -88,7 +89,25 @@
            this.addEventListenerAll(element, 'click drag dblclick',e=>{
             this._daddyDJ = element.parentNode;
                 let WhoAmI = this._NambaToEdit = this._daddyDJ.classList.toString().substring(this._daddyDJ.classList.toString().indexOf("-") + 1);
-                console.log(WhoAmI);
+                WhoAmI = WhoAmI.substring(0,1);
+
+                let Inputer = document.createElement('div');
+                Inputer.classList.add("alternativa");
+                Inputer.classList.add(`alternativa-${WhoAmI}`);
+                if (this._Alters[WhoAmI] == 3) {
+                    this._Alters[WhoAmI] = 3;   
+                }
+
+                Inputer.id = `alternativa-${this._questionNumber}-${this._Altera[this._questionNumber] = this._Altera[this._questionNumber] + 1}`;
+                Inputer.innerHTML = 
+                `
+                <input type="radio" id="alternativa${this._Alters[WhoAmI]}-${WhoAmI}" name="${WhoAmI}" value="alternativa${this._Alters[WhoAmI]}-${WhoAmI}" /> <label id="alternative${this._Alters[WhoAmI]}-${WhoAmI}" for="alternativa${this._Alters[WhoAmI]}-${this._questionNumber}">ㅤAlternativa ${this._Alters[WhoAmI]}</label> 
+                `
+                this._Alters[WhoAmI] = this._Alters[WhoAmI] + 1;
+                //RadioTyper-${this._questionNumber}-2 
+
+            document.querySelector(``).appendChild(Question);
+
            });
 
        });

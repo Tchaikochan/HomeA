@@ -72,6 +72,7 @@
                     btnNewPergunta.style.backgroundColor = "#86E9BD";
 
                 }
+                
                 this._questionNumber++;
                 this.addSelect();
                 this.addAlter();
@@ -85,8 +86,9 @@
        let Typer = document.querySelectorAll(".alternativa");
        Typer.forEach(element => {
            this.addEventListenerAll(element, 'click drag dblclick',e=>{
-                console.log(element.id);
-
+            this._daddyDJ = element.parentNode;
+                let WhoAmI = this._NambaToEdit = this._daddyDJ.classList.toString().substring(this._daddyDJ.classList.toString().indexOf("-") + 1);
+                console.log(WhoAmI);
            });
 
        });
@@ -121,8 +123,8 @@
                 </select>
                     <br /><br />
                 <div class="RadioTyper RadioTyper-${this._NambaToEdit}-2">
-                <div id="alternativa-${this._NambaToEdit}-${this._Altera[this._NambaToEdit]}" class="alternativa"><input type="radio" id="alternativa0-${this._NambaToEdit}" name="${this._NambaToEdit}" value="alternativa0-${this._NambaToEdit}" checked /> <label for="alternativa0-${this._NambaToEdit}">ㅤAlternativa 1</label> </div> <br />
-                <div id="alternativa-${this._NambaToEdit}-${this._Altera[this._questionNumber] = this._Altera[this._questionNumber] + 1}" class="alternativa"><input type="radio" id="alternativa1-${this._NambaToEdit}" name="${this._NambaToEdit}" value="alternativa1-${this._NambaToEdit}" /> <label for="alternativa1-${this._NambaToEdit}">ㅤAlternativa 2</label> </div> <br />
+                    <div class="alternativa alternativa-${this._NambaToEdit}" id="alternativa-${this._NambaToEdit}-${this._Altera[this._NambaToEdit]}"><input type="radio" id="alternativa0-${this._NambaToEdit}" name="${this._NambaToEdit}" value="alternativa0-${this._NambaToEdit}" checked /> <label id="alternative0-${this._NambaToEdit}"for="alternativa0-${this._NambaToEdit}">ㅤAlternativa 1</label> </div> <br />
+                    <div class="alternativa alternativa-${this._NambaToEdit}" id="alternativa-${this._NambaToEdit}-${this._Altera[this._NambaToEdit] = this._Altera[this._NambaToEdit] + 1}"><input type="radio" id="alternativa1-${this._NambaToEdit}" name="${this._NambaToEdit}" value="alternativa1-${this._NambaToEdit}" /> <label id="alternative1-${this._NambaToEdit}" for="alternativa1-${this._NambaToEdit}">ㅤAlternativa 2</label> </div> <br />
                 </div>
                 <br />
             `   
@@ -146,6 +148,7 @@
         }
         this.addSelect();
         this.addAlter();
+        this.formRadio()
 
     }
 
@@ -154,7 +157,6 @@
         this._alter = document.querySelectorAll(".alternativa");
         this._alter.forEach(elementar => {
             elementar.addEventListener("click",e=>{
-                console.log(elementar + dio);
                 dio++;
                 this._daddyDJ = elementar.parentNode;
                 this._NambaToEdit = this._daddyDJ.classList.toString().substring(this._daddyDJ.classList.toString().indexOf("-") + 1);

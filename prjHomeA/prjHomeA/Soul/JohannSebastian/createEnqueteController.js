@@ -106,8 +106,6 @@
                     <input type="radio" id="alternativa${this._Alters[WhoAmI]}-${WhoAmI}" name="${WhoAmI}" value="alternativa${this._Alters[WhoAmI]}-${WhoAmI}" /> <label id="alternative${this._Alters[WhoAmI]}-${WhoAmI}" for="alternativa${this._Alters[WhoAmI]}-${WhoAmI}">ㅤAlternativa ${this._Alters[WhoAmI]}</label> <br />
                     `
                     this._Alters[WhoAmI] = this._Alters[WhoAmI] + 1;
-                    console.log("dio" + this._Alters[WhoAmI]);
-                    console.log(WhoAmI);
                     element.parentNode.appendChild(Inputer);
                     element.parentNode.appendChild(document.createElement('br'));
 

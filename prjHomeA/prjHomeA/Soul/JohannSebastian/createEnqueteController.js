@@ -88,7 +88,8 @@
        Typer.forEach(element => {
            this.addEventListenerAll(element, 'click drag dblclick',e=>{
                console.log(element);
-                if (true) {
+                if (element.classlist.toString().substring(element.classList.toString().indexOf("-") + 1)){
+                    console.log("ROGÉRIO DO AGRESTE" + element.classlist.toString().substring(element.classList.toString().indexOf("-") + 1));
                     this._daddyDJ = element.parentNode;
                     let WhoAmI = this._NambaToEdit = this._daddyDJ.classList.toString().substring(this._daddyDJ.classList.toString().indexOf("-") + 1);
                     WhoAmI = WhoAmI.substring(0,1);

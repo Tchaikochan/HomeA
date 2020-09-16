@@ -87,9 +87,11 @@
        let Typer = document.querySelectorAll(".alternativa");
        Typer.forEach(element => {
            this.addEventListenerAll(element, 'click drag dblclick',e=>{
-               console.log(element);
-                if (element.classlist.toString().substring(element.classList.toString().indexOf("-") + 1)){
-                    console.log("ROGÉRIO DO AGRESTE" + element.classlist.toString().substring(element.classList.toString().indexOf("-") + 1));
+               let Roger = element.id.toString();
+               console.log(`Fernandinha ${Roger}`);
+               console.log(`FJ Rogeriho${this._Altera[Roger.substring(Roger.indexOf("-"),2)]}`);
+               console.log(this._Altera[Roger.substring(Roger.indexOf("-") + 1)]);
+                if (this._Altera[Roger.substring(Roger.indexOf("-") + 3)] == Roger.substring(Roger.indexOf("-") + 3)){
                     this._daddyDJ = element.parentNode;
                     let WhoAmI = this._NambaToEdit = this._daddyDJ.classList.toString().substring(this._daddyDJ.classList.toString().indexOf("-") + 1);
                     WhoAmI = WhoAmI.substring(0,1);

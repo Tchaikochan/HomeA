@@ -103,7 +103,7 @@ namespace prjHomeA.Soul.Pages
         /// <summary>
         /// Utiliza Stored Procedures que retornam algum valor.
         /// </summary>
-        /// <param name="SP">Nome da Stored Procedure a ser utilizada.</param>
+        /// <param name="   SP">Nome da Stored Procedure a ser utilizada.</param>
         /// <param name="args">Array de argumetos a serem passados para uso da Stored Procedure.</param>
         /// <param name="Selected"></param>
         public MySqlDataReader getSP(string SP, string[,] args)

@@ -88,13 +88,19 @@
        Typer.forEach(element => {
            this.addEventListenerAll(element, 'click drag dblclick',e=>{
                let Roger = element.id.toString();
-               console.log(`Fernandinha ${Roger}`);
+               /*console.log(`Fernandinha ${Roger}`);
+               console.log(`MR JONES AND ME ${Roger.substring(Roger.indexOf("-")+3)}`)
+               console.log("DIO BRANDO NEGRO" + this._Altera)
                console.log(`FJ Rogeriho${this._Altera[Roger.substring(Roger.indexOf("-"),2)]}`);
                console.log(this._Altera[Roger.substring(Roger.indexOf("-") + 1)]);
-                if (this._Altera[Roger.substring(Roger.indexOf("-") + 3)] == Roger.substring(Roger.indexOf("-") + 3)){
-                    this._daddyDJ = element.parentNode;
-                    let WhoAmI = this._NambaToEdit = this._daddyDJ.classList.toString().substring(this._daddyDJ.classList.toString().indexOf("-") + 1);
-                    WhoAmI = WhoAmI.substring(0,1);
+                */
+               console.log("PiuPiu" + element.classList.toString().substring(element.classList.toString().indexOf("-") + 1));
+               this._daddyDJ = element.parentNode;
+               let WhoAmI = this._daddyDJ.classList.toString().substring(this._daddyDJ.classList.toString().indexOf("-") + 1);
+               WhoAmI = WhoAmI.substring(0,1);
+               console.log(`Altera ${this._Altera[WhoAmI]}`);
+               console.log(`Ricardo ${Roger.substring(Roger.indexOf("-")+3)}`)
+                if (this._Altera[WhoAmI] == Roger.substring(Roger.indexOf("-")+3)){
 
                     let Inputer = document.createElement('div');
                     Inputer.classList.add("alternativa");
@@ -103,12 +109,14 @@
                         this._Alters.push(3);   
                     }
 
-                    Inputer.id = `alternativa-${WhoAmI}-${this._questionNumber}-${this._Altera[this._questionNumber]}`;
+                    Inputer.id = `alternativa-${WhoAmI}-${WhoAmI}-${this._Altera[WhoAmI]}`;
                     Inputer.innerHTML = 
                     `
                     <input type="radio" id="alternativa${this._Alters[WhoAmI]}-${WhoAmI}" name="${WhoAmI}" value="alternativa${this._Alters[WhoAmI]}-${WhoAmI}" /> <label id="alternative${this._Alters[WhoAmI]}-${WhoAmI}" for="alternativa${this._Alters[WhoAmI]}-${WhoAmI}">ㅤAlternativa ${this._Alters[WhoAmI]}</label> <br />
                     `
+                    console.log(`More a guy ${this._Alters[WhoAmI]} with two eyes ${WhoAmI}`)
                     this._Alters[WhoAmI] = this._Alters[WhoAmI] + 1;
+                    this._Altera[WhoAmI] = this._Alters[WhoAmI];
                     element.parentNode.appendChild(Inputer);
                     element.parentNode.appendChild(document.createElement('br'));
 

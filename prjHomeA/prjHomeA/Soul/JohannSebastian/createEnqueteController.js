@@ -88,13 +88,7 @@
        Typer.forEach(element => {
            this.addEventListenerAll(element, 'click drag dblclick',e=>{
                let Roger = element.id.toString();
-               /*console.log(`Fernandinha ${Roger}`);
-               console.log(`MR JONES AND ME ${Roger.substring(Roger.indexOf("-")+3)}`)
-               console.log("DIO BRANDO NEGRO" + this._Altera)
-               console.log(`FJ Rogeriho${this._Altera[Roger.substring(Roger.indexOf("-"),2)]}`);
-               console.log(this._Altera[Roger.substring(Roger.indexOf("-") + 1)]);
-                */
-               console.log("PiuPiu" + element.classList.toString().substring(element.classList.toString().indexOf("-") + 1));
+
                this._daddyDJ = element.parentNode;
                let WhoAmI = this._daddyDJ.classList.toString().substring(this._daddyDJ.classList.toString().indexOf("-") + 1);
                WhoAmI = WhoAmI.substring(0,1);

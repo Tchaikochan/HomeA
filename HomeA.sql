@@ -34,6 +34,7 @@ CREATE TABLE Enquete(
 CONSTRAINT pk_enquete PRIMARY KEY (cd_enquete)
 
 );
+
 INSERT INTO Enquete values ('Querem uma festa de fim de ano?','Como estamos numa quarentena é necessário decidir se é seguro ter uma festa de fim de ano. Vocês acham melhor não termos uma festa de fim de ano?',DATE_FORMAT( "2012/09/09", "%Y/%m/%d" ),0);
 
 CREATE TABLE Pergunta(

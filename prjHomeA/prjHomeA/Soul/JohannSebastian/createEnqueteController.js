@@ -55,8 +55,8 @@
                 </select>
                     <br /><br />
                 <div class="RadioTyper RadioTyper-${this._questionNumber}-2">
-                    <div class="alternativa alternativa-${this._questionNumber}" id="alternativa-${this._questionNumber}-${this._Altera[this._questionNumber]}"><input type="radio" id="alternativa0-${this._questionNumber}" name="${this._questionNumber}" value="alternativa0-${this._questionNumber}" checked /> <label id="alternative0-${this._questionNumber}"for="alternativa0-${this._questionNumber}">ㅤAlternativa 1</label> </div> <br />
-                    <div class="alternativa alternativa-${this._questionNumber}" id="alternativa-${this._questionNumber}-${this._Altera[this._questionNumber] = this._Altera[this._questionNumber] + 1}"><input type="radio" id="alternativa1-${this._questionNumber}" name="${this._questionNumber}" value="alternativa1-${this._questionNumber}" /> <label id="alternative1-${this._questionNumber}" for="alternativa1-${this._questionNumber}">ㅤAlternativa 2</label> </div> <br />
+                    <div value="${this._Altera[this._questionNumber]}" class="alternativa alternativa-${this._questionNumber}" id="alternativa-${this._questionNumber}-${this._Altera[this._questionNumber]}"><input type="radio" id="alternativa0-${this._questionNumber}" name="${this._questionNumber}" value="alternativa0-${this._questionNumber}" checked /> <label id="alternative0-${this._questionNumber}"for="alternativa0-${this._questionNumber}">ㅤAlternativa 1</label> </div> <br />
+                    <div value="${this._Altera[this._questionNumber] = this._Altera[this._questionNumber] + 1}"class="alternativa alternativa-${this._questionNumber}" id="alternativa-${this._questionNumber}-${this._Altera[this._questionNumber] = this._Altera[this._questionNumber] + 1}"><input type="radio" id="alternativa1-${this._questionNumber}" name="${this._questionNumber}" value="alternativa1-${this._questionNumber}" /> <label id="alternative1-${this._questionNumber}" for="alternativa1-${this._questionNumber}">ㅤAlternativa 2</label> </div> <br />
                 </div>
                 <br />
             </div>

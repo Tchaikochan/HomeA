@@ -34,7 +34,7 @@ SaveAs.addEventListener('click',e=>{
     var Armin = Alterego.join('^');
 
     $.post("createEnquete.aspx",{t:Titulo,s:DS,e:Enqueta,a:AttackOnTitle,v:Armin},function(callbacku){
-            alert(callbacku);
+
     });
 
 });

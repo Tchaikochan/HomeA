@@ -92,8 +92,6 @@
                this._daddyDJ = element.parentNode;
                let WhoAmI = this._daddyDJ.classList.toString().substring(this._daddyDJ.classList.toString().indexOf("-") + 1);
                WhoAmI = WhoAmI.substring(0,1);
-               console.log(`Altera ${this._Altera[WhoAmI]}`);
-               console.log(`Ricardo ${Roger.substring(Roger.indexOf("-")+3)}`)
                 if (this._Altera[WhoAmI] == Roger.substring(Roger.indexOf("-")+3)){
 
                     let Inputer = document.createElement('div');
@@ -108,7 +106,6 @@
                     `
                     <input type="radio" id="alternativa${this._Alters[WhoAmI]}-${WhoAmI}" name="${WhoAmI}" value="alternativa${this._Alters[WhoAmI]}-${WhoAmI}" /> <label id="alternative${this._Alters[WhoAmI]}-${WhoAmI}" for="alternativa${this._Alters[WhoAmI]}-${WhoAmI}">ㅤAlternativa ${this._Alters[WhoAmI]}</label> <br />
                     `
-                    console.log(`More a guy ${this._Alters[WhoAmI]} with two eyes ${WhoAmI}`)
                     this._Alters[WhoAmI] = this._Alters[WhoAmI] + 1;
                     this._Altera[WhoAmI] = this._Alters[WhoAmI];
                     element.parentNode.appendChild(Inputer);

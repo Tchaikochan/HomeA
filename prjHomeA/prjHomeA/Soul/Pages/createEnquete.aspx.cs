@@ -62,10 +62,23 @@ namespace prjHomeA.Soul.Pages
 
             }
 
+            if (Request["v"] == null)
+            {
+                return;
+
+            }
+
+            if (Request["v"].ToString() == "")
+            {
+                return;
+
+            }
+
             string InserTitle = Request["t"].ToString();
             string InserDS = Request["s"].ToString();
             string[] InserEnq = Request["e"].ToString().Split('^');
             string[] InserEren = Request["a"].ToString().Split('^');
+            string[] InserArmin = Request["v"].ToString().Split('^');
             DataBase Banco = new DataBase();
             Banco.openBar("localhost", "root", "root", "HomeA");
             Banco.getCommand("SELECT * FROM Enquete");
@@ -81,28 +94,36 @@ namespace prjHomeA.Soul.Pages
 
             Banco.openBar();
             Banco.setCommand("INSERT INTO Enquete values ('" + InserTitle + "','" + InserDS + "',DATE_FORMAT(CURRENT_DATE(), '%Y/%m/%d' ),"+ CodeEnquete +");");
-           
+
+            Banco.Refresh();
+
             for (int i = 0; i < InserEren.Length; i++)
 			{
+
+                Banco.openBar();
+
                 Ronaldo = InserEren[i].Substring(InserEren[i].IndexOf('¨') + 1);
                 Perg = InserEren[i].Substring(0, InserEren[i].IndexOf('¨'));
 			    Banco.setCommand("INSERT INTO Pergunta values('" + Perg + "'," + Ronaldo + "," + CodeEnquete + ");");
                 for (int C = 0; C < InserEnq.Length; C++)
                 {
+                    Banco.openBar();
                     string Fenomeno = InserEnq[i].Substring(12,2).Replace("-","");
-                    string Gaucho = InserEnq[i].Substring(14, 3).Replace("-", "");
+                    string Gaucho = InserEnq[i].Substring(14, 1).Replace("-", "");
                     if (Ronaldo == Fenomeno)
                     {
-                        Banco.setCommand("INSERT INTO Alternativa values('" + Gaucho + "',nm_alternativa,cd_pergunta,cd_enquete");       
+                        Banco.setCommand("INSERT INTO Alternativa values('" + Gaucho + "','" + InserArmin[i] + "'," + Ronaldo + "," + CodeEnquete + ");");
 
                     }
 
+                    Banco.Refresh();
+
                 }
+
+                Banco.Refresh();
  
 			}
 
-            // Banco.setCommand("INSERT INTO Alternativa values(cd_alternativa,nm_alternativa,cd_pergunta,cd_enquete");
-            //alternativa-2-0^alternativa-2-1^alternativa-3-0^alternativa-3-1
             Banco.Refresh();
             Response.Write(InserTitle);
         }

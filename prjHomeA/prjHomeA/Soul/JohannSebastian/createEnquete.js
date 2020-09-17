@@ -15,7 +15,7 @@ SaveAs.addEventListener('click',e=>{
         Kid.forEach(elementar => {
             if (elementar.classList.contains('alternativa')) {
                 Enquetoo.push(elementar.id);
-                Alterego.push(elementar.value);
+                Alterego.push(elementar.children[0].value);
 
             }
             

@@ -47,7 +47,7 @@
             this._Altera.push(0);
             Question.innerHTML = `
             <div class="questionBA questionBA-${this._questionNumber}">
-                <input type="text" class="generalQuestionsText" id="formTitleEnquete" placeholder="Digite Sua Pergunta">
+                <input type="text" class="generalQuestionsText" id="formTitleEnquete-${this._questionNumber}" placeholder="Digite Sua Pergunta">
                 <br /><br />
                 <select class="SelectTypeForm" id="SelectTypeForm-${this._questionNumber}">
                     <option value="radio">Alternativa</option>

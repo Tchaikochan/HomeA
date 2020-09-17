@@ -38,8 +38,21 @@ namespace prjHomeA.Soul.Pages
 
             }
 
+            if (Request["e"] == null)
+            {
+                return;
+
+            }
+
+            if (Request["e"].ToString() == "")
+            {
+                return;
+
+            }
+
             string InserTitle = Request["t"].ToString();
             string InserDS = Request["s"].ToString();
+            string[] InserEnq = Request["e"].ToString().Split('^');
             DataBase Banco = new DataBase();
             Banco.openBar("localhost", "root", "root", "HomeA");
             Banco.getCommand("SELECT * FROM Enquete");
@@ -53,7 +66,8 @@ namespace prjHomeA.Soul.Pages
 
             Banco.openBar();
             Banco.setCommand("INSERT INTO Enquete values ('" + InserTitle + "','" + InserDS + "',DATE_FORMAT(CURRENT_DATE(), '%Y/%m/%d' ),"+ CodeEnquete +");");
-
+           // Banco.setCommand("INSERT INTO Alternativa values(cd_alternativa,nm_alternativa,cd_pergunta,cd_enquete");
+            //alternativa-2-0^alternativa-2-1^alternativa-3-0^alternativa-3-1
             Banco.Refresh();
             Response.Write(InserTitle);
         }

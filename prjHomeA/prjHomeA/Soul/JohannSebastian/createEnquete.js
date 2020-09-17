@@ -3,6 +3,7 @@ var Controller = new EnqueteController();
 
 var SaveAs = document.querySelector("#SalvarBotão");
 var Enquetoo = [];
+var Enquetooga = [];
 SaveAs.addEventListener('click',e=>{
     var Titulo = document.querySelector("#formTitleEnquete").value;
     var DS = document.querySelector("#formDsEnquete").value;
@@ -19,10 +20,16 @@ SaveAs.addEventListener('click',e=>{
         
     });
 
-    var Enqueta = Enquetoo.join('^');
-    console.log(Enqueta);
+    var EnquetePD = document.querySelectorAll(".generalQuestionsText");
+    EnquetePD.forEach(element => {
+                Enquetooga.push(`${element.value}¨${element.id.substring(element.id.indexOf('-'))}`);
 
-    $.post("createEnquete.aspx",{t:Titulo,s:DS,e:Enqueta},function(callbacku){
+    });
+
+    var Enqueta = Enquetoo.join('^');
+    var AttackOnTitle = Enquetooga.join('^');
+
+    $.post("createEnquete.aspx",{t:Titulo,s:DS,e:Enqueta,a:AttackOnTitle},function(callbacku){
             alert(callbacku);
     });
 

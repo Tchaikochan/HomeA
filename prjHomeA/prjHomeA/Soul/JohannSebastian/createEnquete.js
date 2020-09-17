@@ -10,6 +10,7 @@ SaveAs.addEventListener('click',e=>{
     var Enquete = document.querySelectorAll(".RadioTyper");
     Enquete.forEach(element => {
         let Kid = Array.from(element.children);
+
         Kid.forEach(elementar => {
             if (elementar.classList.contains('alternativa')) {
                 Enquetoo.push(elementar.id);

@@ -43,6 +43,7 @@
                 Question.classList.add("Noire"); 
 
             }
+
             Question.id = "L" + this._questionNumber.toString();
             this._Altera.push(0);
             Question.innerHTML = `
@@ -61,6 +62,7 @@
                 <br />
             </div>
             `;
+            
                 document.querySelector("#formCreateFullEnquete").appendChild(Question);
                 document.querySelector("#formCreateFullEnquete").appendChild(btnNewPergunta);
                 

@@ -18,17 +18,39 @@ namespace prjHomeA.Soul.Pages
                 return;
 
             }
+            string Dating = DatingSim.Substring(0, 10); 
+            string Time = DatingSim.Substring(10).Replace("T","");
+
             string WhoChecked = Request["w"].ToString();
             if (WhoChecked == "" || WhoChecked == null)
             {
                 return;
 
             }
+            string[] Result;
+            Result = WhoChecked.Split('$');
+            string Apartamento = Request["a"].ToString();
+            if (Apartamento == "" || Apartamento == null)
+            {
+                return;
+
+            }
+            string Bloco = Request["b"].ToString();
+            if (Bloco == "" || Bloco == null)
+            {
+                return;
+
+            }
+
 
             DataBase Banco = new DataBase();
-            Banco.openBar("localhost", "root", "root", "HomeA");
-            Banco.setCommand("INSERT INTO ");
-            Banco.Refresh();
+            for (int i = 0; i < Result.Length; i++)
+            {
+                Banco.openBar("localhost", "root", "root", "HomeA");
+                Banco.setCommand("INSERT INTO Reserva_Area_Lazer VALUES (" + Dating + "," + Time + "," + Result[i] + "," + Apartamento + "," + Bloco);
+                Banco.Refresh();
+
+            }
 
         }
     }

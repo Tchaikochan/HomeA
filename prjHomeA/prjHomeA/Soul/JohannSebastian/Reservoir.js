@@ -11,7 +11,7 @@
     Apartamento = 14;
     let Bloco = 0;
     $.post("reservar.aspx",{d:String(DatingSim.value),w:WhoChecked,a:Apartamento,b:Bloco},function(callbacku){
-
+        alert("COMING BACK! COMING BACK!");
 
     });
 

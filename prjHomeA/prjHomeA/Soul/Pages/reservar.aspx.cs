@@ -18,7 +18,7 @@ namespace prjHomeA.Soul.Pages
                 return;
 
             }
-            string Dating = DatingSim.Substring(0, 10); 
+            string Dating = DatingSim.Substring(0, 10).Replace("-","/"); 
             string Time = DatingSim.Substring(10).Replace("T","");
 
             string WhoChecked = Request["w"].ToString();
@@ -44,10 +44,10 @@ namespace prjHomeA.Soul.Pages
 
 
             DataBase Banco = new DataBase();
-            for (int i = 0; i < Result.Length; i++)
+            for (int i = 0; i < Result.Length - 1; i++)
             {
                 Banco.openBar("localhost", "root", "root", "HomeA");
-                Banco.setCommand("INSERT INTO Reserva_Area_Lazer VALUES (" + Dating + "," + Time + "," + Result[i] + "," + Apartamento + "," + Bloco);
+                Banco.setCommand("INSERT INTO Reserva_Area_Lazer VALUES (DATE_FORMAT('" + Dating + "','%Y/%m/%d'),TIME_FORMAT('" + Time + ":00','%h:%i:%s')," + Result[i] + "," + Apartamento + "," + Bloco + ")");
                 Banco.Refresh();
 
             }

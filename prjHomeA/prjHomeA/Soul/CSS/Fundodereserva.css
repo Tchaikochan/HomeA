@@ -1,0 +1,20 @@
+#acount{
+    font-family: sans-serif;
+    color: whitesmoke   ;
+    width:360px;
+    height:250px;
+    border:solid 2.5px #129450;
+    border-radius:40px;
+  }
+.hr3 {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent,#129450, transparent);
+}
+
+#vf{
+    font-family: sans-serif;
+    color: whitesmoke;
+    font-size: 20px;
+    text-align: center;
+}

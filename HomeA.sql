@@ -17,6 +17,7 @@ CREATE TABLE Area_Lazer (
   cd_condominio INT,
   CONSTRAINT pk_Area_Lazer PRIMARY KEY (cd_area_lazer) ,
   CONSTRAINT fk_Area_Lazer_Condomino FOREIGN KEY (cd_condominio) REFERENCES Condominio(cd_condominio)
+
 );
 
 Insert into Area_Lazer values (0, "Churrasqueira", 1);

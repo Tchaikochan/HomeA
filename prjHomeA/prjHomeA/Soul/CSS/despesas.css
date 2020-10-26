@@ -1,0 +1,13 @@
+.hr3 {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent,#129450, transparent);  
+  }
+
+.p#sas{
+    border: 2px, #129450;
+    border-width: 360px;
+    height: 200px;
+    font-family: sans-serif;
+    color: white;
+}

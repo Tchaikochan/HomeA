@@ -1,0 +1,34 @@
+blog-content-wrap {
+    font-family: sans-serif;
+    color: white;
+}
+.button {
+    
+    font-family: sans-serif;
+    color: white;
+    padding-left: 0px; 
+}
+button {
+    
+    font-family: sans-serif;
+    margin-left: .5em;
+}
+form {
+    align-content: center;
+    font-family: sans-serif;
+
+}
+
+.hr3 {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent,#129450, transparent);  
+  }
+
+  .text {
+    background-color: whitesmoke;
+}
+
+textarea{
+    background-color: whitesmoke;
+}

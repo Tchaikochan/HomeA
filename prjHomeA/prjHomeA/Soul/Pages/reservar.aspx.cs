@@ -58,8 +58,8 @@ namespace prjHomeA.Soul.Pages
             }
             else
             {
-                string WhoChecked = Request["w"].ToString();
-                if (WhoChecked == "" || WhoChecked == null)
+                string Condominio = Request["c"].ToString();
+                if (Condominio == "" || Condominio == null)
                 {
                     return;
 
@@ -70,11 +70,15 @@ namespace prjHomeA.Soul.Pages
                 Banco.getCommand("SELECT * FROM Area_Lazer");
                 while (Banco.Selected.Read())
                 {
-                    Return += Banco.Selected["nm_area_lazer"] + "$" + Banco.Selected["cd_area_lazer"] + "#"; 
+                    if (Condominio == Banco.Selected["cd_condominio"].ToString())
+                    {
+                        Return += Banco.Selected["nm_area_lazer"].ToString() + "$" + Banco.Selected["cd_area_lazer"].ToString() + "#"; 
 
+                    }
+                    
                 }
                 Banco.Refresh();
-
+                Response.Write(Return);
             }
             
 

@@ -12,45 +12,59 @@ namespace prjHomeA.Soul.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string DatingSim = Request["d"].ToString();
-            if (DatingSim == "" || DatingSim == null)
-            {
-                return;
-
-            }
-            string Dating = DatingSim.Substring(0, 10).Replace("-","/"); 
-            string Time = DatingSim.Substring(10).Replace("T","");
-
-            string WhoChecked = Request["w"].ToString();
-            if (WhoChecked == "" || WhoChecked == null)
-            {
-                return;
-
-            }
-            string[] Result;
-            Result = WhoChecked.Split('$');
-            string Apartamento = Request["a"].ToString();
-            if (Apartamento == "" || Apartamento == null)
-            {
-                return;
-
-            }
-            string Bloco = Request["b"].ToString();
-            if (Bloco == "" || Bloco == null)
-            {
-                return;
-
-            }
-
-
             DataBase Banco = new DataBase();
-            for (int i = 0; i < Result.Length - 1; i++)
+            bool isRunning = bool.Parse(Request["checker"]);
+            if (isRunning)
+            {
+                string DatingSim = Request["d"].ToString();
+                if (DatingSim == "" || DatingSim == null)
+                {
+                    return;
+
+                }
+                string Dating = DatingSim.Substring(0, 10).Replace("-", "/");
+                string Time = DatingSim.Substring(10).Replace("T", "");
+
+                string WhoChecked = Request["w"].ToString();
+                if (WhoChecked == "" || WhoChecked == null)
+                {
+                    return;
+
+                }
+                string[] Result;
+                Result = WhoChecked.Split('$');
+                string Apartamento = Request["a"].ToString();
+                if (Apartamento == "" || Apartamento == null)
+                {
+                    return;
+
+                }
+                string Bloco = Request["b"].ToString();
+                if (Bloco == "" || Bloco == null)
+                {
+                    return;
+
+                }
+
+
+                for (int i = 0; i < Result.Length - 1; i++)
+                {
+                    Banco.openBar("localhost", "root", "root", "HomeA");
+                    Banco.setCommand("INSERT INTO Reserva_Area_Lazer VALUES (DATE_FORMAT('" + Dating + "','%Y/%m/%d'),TIME_FORMAT('" + Time + ":00','%h:%i:%s')," + Result[i] + "," + Apartamento + "," + Bloco + ")");
+                    Banco.Refresh();
+
+                }
+
+            }
+            else
             {
                 Banco.openBar("localhost", "root", "root", "HomeA");
-                Banco.setCommand("INSERT INTO Reserva_Area_Lazer VALUES (DATE_FORMAT('" + Dating + "','%Y/%m/%d'),TIME_FORMAT('" + Time + ":00','%h:%i:%s')," + Result[i] + "," + Apartamento + "," + Bloco + ")");
+                Banco.getCommand("SELECT * FROM Area_Lazer");
+                Banco.Selected;
                 Banco.Refresh();
 
             }
+            
 
         }
     }

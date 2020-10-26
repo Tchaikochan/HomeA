@@ -3,6 +3,10 @@ var isRunning = false;
 var Condominio = "0";
 
 function initPage(){
+    $.post("reservar.aspx",{checker:isRunning,c:Condominio},function(callbacku){
+        
+        isRunning = true;
+    });
     let label = document.createElement("label");
     label.classList.add("container");
     label.innerHTML = 

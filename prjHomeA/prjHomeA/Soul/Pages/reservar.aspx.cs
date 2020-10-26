@@ -58,9 +58,21 @@ namespace prjHomeA.Soul.Pages
             }
             else
             {
+                string WhoChecked = Request["w"].ToString();
+                if (WhoChecked == "" || WhoChecked == null)
+                {
+                    return;
+
+                }
+
+                string Return = "";
                 Banco.openBar("localhost", "root", "root", "HomeA");
                 Banco.getCommand("SELECT * FROM Area_Lazer");
-                Banco.Selected;
+                while (Banco.Selected.Read())
+                {
+                    Return += Banco.Selected["nm_area_lazer"] + "$" + Banco.Selected["cd_area_lazer"] + "#"; 
+
+                }
                 Banco.Refresh();
 
             }

@@ -1,1 +1,0 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="createEnquete.aspx.cs" Inherits="prjHomeA.Soul.Pages.createEnquete" %>

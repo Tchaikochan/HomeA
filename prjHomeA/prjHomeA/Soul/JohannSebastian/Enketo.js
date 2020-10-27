@@ -13,8 +13,7 @@ function initPage(){
         <label for="1"><h5>Alternativa 1</h5></label>
         <input type="radio" id="1" name="1" value="">
         <label for="2"><h5>Alternativa 2</h5></label>
-        <input type="radio" id="2" name="2" value="">
-                    
+        <input type="radio" id="2" name="2" value="">   
      </div>
 
      <hr class="hr3">
@@ -25,8 +24,7 @@ function initPage(){
         <input type="radio" id="1" name="1" value="">
         <label for="2"><h5>Alternativa 2</h5></label>
         <input type="radio" id="2" name="2" value="">
-                    
-     </div>
+    </div>
 
     `
     EditName();
@@ -41,13 +39,26 @@ function EditName() {
             
             element.children[0].addEventListener("click",e=>{
                 var CB = document.createElement("input");
+                var BTN = document.createElement("div");
+                BTN.innerHTML = 
+                `
+                <hr />   
+                <button>Salvar Alterações</button>
+                `;
                 CB.type = "text";
                 CB.id = "ChangeASK"
+                console.log(element);
+                BTN.id = `BTN`;
+                let Kill = element.children[0];
                 element.children[0].parentNode.replaceChild(CB,element.children[0]);
+                element.appendChild(BTN);
+                BTN.children[1].addEventListener("click",f=>{
+                    console.log("RONALDO");
+                    BTN.remove();        
+                    if(CB.value == "" || CB.value == null) CB.value = "Hey! Você não escreveu nada."
+                    Kill.innerHTML = CB.value;
+                    element.children[0].parentNode.replaceChild(Kill,CB);
                 
-                document.querySelector("#ChangeASK").addEventListener("onBlur",f=>{
-                    console.log("Ronaldo");
-            
                 });
 
             });

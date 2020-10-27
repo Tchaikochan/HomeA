@@ -3,6 +3,7 @@ var Former = document.querySelector("#Subete");
 var Questions = Former.children[2];
 var Altera = [];
 var C = 0;
+var Pool = true;
 
 function initPage(){
     Questions.innerHTML +=
@@ -14,7 +15,7 @@ function initPage(){
         <h5>Alternativa 1</h5>
         <input type="radio" id="1" name="1" value="">
         <h5>Alternativa 2</h5>
-        <input type="radio" id="2" name="2" value="">  
+        <input type="radio" id="2" name="1" value="">  
         <br /> 
         <button class="Add">Adicionar Alternativa</button>
         </div>
@@ -24,7 +25,7 @@ function initPage(){
     <div class="radio">
         <h4>Pergunta 2</h4>
         <h5>Alternativa 1</h5>
-        <input type="radio" id="1" name="1" value="">
+        <input type="radio" id="1" name="2" value="">
         <h5>Alternativa 2</h5>
         <input type="radio" id="2" name="2" value="">
         <br />
@@ -43,30 +44,38 @@ function EditName() {
             V = 0;
             while (element.children[V] != null) {
                 if (element.children[V].classList.contains("Add")){
-                    element.children[V].addEventListener("click",O=>{
-                        let Killer = O.target;
-                        let Mew = document.createElement("h5");
-                        let MewTwo = document.createElement("input");
-                        let Hue = document.createElement("br");
-                        MewTwo.type = "radio";
-                        MewTwo.id = C;
-                        MewTwo.name = C;
-                        MewTwo.value = "";
-                        Mew.innerHTML = `Alternativa ${C}`;
-                        Killer.parentNode.appendChild(Mew);
-                        Killer.parentNode.appendChild(MewTwo);
-                        Killer.parentNode.appendChild(Hue);
-                        Killer.remove()
-                        Mew.parentNode.appendChild(Killer);
+                    if (Pool) {
+                        element.children[V].addEventListener("click",O=>{
+                            let Killer = O.target;
+                            let Mew = document.createElement("h5");
+                            let MewTwo = document.createElement("input");
+                            let Hue = document.createElement("br");
+                            MewTwo.type = "radio";
+                            MewTwo.id = C;
+                            MewTwo.name = C;
+                            MewTwo.value = "";
+                            Mew.innerHTML = `Alternativa ${V}`;
+                            Killer.parentNode.appendChild(Mew);
+                            Killer.parentNode.appendChild(MewTwo);
+                            Killer.parentNode.appendChild(Hue);
+                            Killer.remove()
+                            Mew.parentNode.appendChild(Killer);
+                            Pool = false;
+                            EditName(element,V);
+                            Pool = true;
+                        });
 
-                    });
+                    }
+                   
                     
                 }
+                console.log(element.children[V]);
                 Editer(element,V);
-                V++;
+                V++;        
+                C++;
+           
             }
         }
-        C++;
     });
 
 }

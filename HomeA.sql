@@ -1,4 +1,4 @@
-	DROP SCHEMA if exists HomeA;
+DROP SCHEMA if exists HomeA;
 CREATE SCHEMA HomeA;
 use HomeA;
 

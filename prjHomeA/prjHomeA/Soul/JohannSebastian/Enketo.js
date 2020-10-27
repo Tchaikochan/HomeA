@@ -36,32 +36,7 @@ function EditName() {
     let C = 0;
     [...Questions.children].forEach(element => {
         if (element.classList.contains("radio")){
-            
-            element.children[0].addEventListener("click",e=>{
-                var CB = document.createElement("input");
-                var BTN = document.createElement("div");
-                BTN.innerHTML = 
-                `
-                <hr />   
-                <button>Salvar Alterações</button>
-                `;
-                CB.type = "text";
-                CB.id = "ChangeASK"
-                console.log(element);
-                BTN.id = `BTN`;
-                let Kill = element.children[0];
-                element.children[0].parentNode.replaceChild(CB,element.children[0]);
-                element.appendChild(BTN);
-                BTN.children[1].addEventListener("click",f=>{
-                    console.log("RONALDO");
-                    BTN.remove();        
-                    if(CB.value == "" || CB.value == null) CB.value = "Hey! Você não escreveu nada."
-                    Kill.innerHTML = CB.value;
-                    element.children[0].parentNode.replaceChild(Kill,CB);
-                
-                });
-
-            });
+            Editer(element);
             C++;
         }
     });
@@ -74,3 +49,33 @@ Former.addEventListener("submit",e=>{
     let DS = (Former.children[1].children[1].value);
 
 });
+
+function Editer(element){
+    element.children[0].addEventListener("click",e=>{
+        var CB = document.createElement("input");
+        var BTN = document.createElement("div");
+        BTN.innerHTML = 
+        `
+        <hr />   
+        <button>Salvar Alterações</button>
+        `;
+        CB.type = "text";
+        CB.id = "ChangeASK"
+        console.log(element);
+        BTN.id = `BTN`;
+        let Kill = e.target;
+        let NodeParent = Kill.parentNode;
+        CB.value = Kill.innerHTML;
+        Kill.parentNode.replaceChild(CB,Kill);
+        element.appendChild(BTN);
+        BTN.children[1].addEventListener("click",f=>{
+            BTN.remove();        
+            if(CB.value == "" || CB.value == null) CB.value = "Hey! Você não escreveu nada."
+            Kill.innerHTML = CB.value;
+            NodeParent.replaceChild(Kill,CB);
+        
+        });
+
+    });
+
+}

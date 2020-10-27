@@ -42,7 +42,6 @@ function EditName() {
         if (element.classList.contains("radio")){
             V = 0;
             while (element.children[V] != null) {
-                Editer(element,V);
                 if (element.children[V].classList.contains("Add")){
                     element.children[V].addEventListener("click",O=>{
                         let Killer = O.target;
@@ -59,12 +58,11 @@ function EditName() {
                         Killer.parentNode.appendChild(Hue);
                         Killer.remove()
                         Mew.parentNode.appendChild(Killer);
-                        EditName();
 
                     });
                     
-                    
                 }
+                Editer(element,V);
                 V++;
             }
         }

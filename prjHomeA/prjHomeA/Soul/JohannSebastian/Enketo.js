@@ -8,9 +8,8 @@ var Pool = true;
 function initPage(){
     Questions.innerHTML +=
     `
-    <hr class="hr3">
-
     <div class="radio">
+    <hr class="hr3">
         <h4>Pergunta 1</h4>
         <h5>Alternativa 1</h5>
         <input type="radio" id="1" name="1" value="">
@@ -19,21 +18,17 @@ function initPage(){
         <br /> 
         <button class="Add">Adicionar Alternativa</button>
         </div>
-
-     <hr class="hr3">
-
-    <div class="radio">
-        <h4>Pergunta 2</h4>
-        <h5>Alternativa 1</h5>
-        <input type="radio" id="1" name="2" value="">
-        <h5>Alternativa 2</h5>
-        <input type="radio" id="2" name="2" value="">
-        <br />
-        <button class="Add">Adicionar Alternativa</button> 
-    </div>
-
     `
     EditName();
+    if (Pool) {
+        document.querySelector("#New").addEventListener("click",e=>{
+            Pool = false;
+            initPage();
+            Pool = true;
+
+        });
+        
+    }
 
 
 }
@@ -108,7 +103,7 @@ function Editer(element,V){
             element.appendChild(BTN);
             BTN.children[1].addEventListener("click",f=>{
                 BTN.remove();        
-                if(CB.value == "" || CB.value == null) CB.value = "Hey! Você não escreveu nada."
+                if(CB.value == "" || CB.value == null) CB.parentNode.remove();
                 Kill.innerHTML = CB.value;
                 NodeParent.replaceChild(Kill,CB);
 

@@ -4,6 +4,7 @@ var Questions = Former.children[2];
 var Altera = [];
 var C = 0;
 var Pool = true;
+var Condominio = "1";
 
 function initPage(){
     Questions.innerHTML +=
@@ -79,6 +80,11 @@ Former.addEventListener("submit",e=>{
     e.preventDefault();
     let Title = (Former.children[0].children[1].value);
     let DS = (Former.children[1].children[1].value);
+
+    $.post("enquete.aspx",{t:Title,d:DS,c:Condominio},function(callbacku){
+        
+        
+    });
 
 });
 

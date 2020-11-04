@@ -92,9 +92,8 @@
     <Content Include="Soul\JohannSebastian\plugins.js" />
     <Content Include="Soul\JohannSebastian\Reservoir.js" />
     <Content Include="Soul\Pages\blog.html" />
-    <Content Include="Soul\Pages\createEnquete.aspx" />
-    <Content Include="Soul\Pages\createEnquete.html" />
     <Content Include="Soul\Pages\despesas.html" />
+    <Content Include="Soul\Pages\enquete.aspx" />
     <Content Include="Soul\Pages\enquete.html" />
     <Content Include="Soul\Pages\Fundodereserva.html" />
     <Content Include="Soul\Pages\Raiz.png" />
@@ -111,12 +110,12 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Soul\Classes\DataBase.cs" />
-    <Compile Include="Soul\Pages\createEnquete.aspx.cs">
-      <DependentUpon>createEnquete.aspx</DependentUpon>
+    <Compile Include="Soul\Pages\enquete.aspx.cs">
+      <DependentUpon>enquete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Soul\Pages\createEnquete.aspx.designer.cs">
-      <DependentUpon>createEnquete.aspx</DependentUpon>
+    <Compile Include="Soul\Pages\enquete.aspx.designer.cs">
+      <DependentUpon>enquete.aspx</DependentUpon>
     </Compile>
     <Compile Include="Soul\Pages\reservar.aspx.cs">
       <DependentUpon>reservar.aspx</DependentUpon>

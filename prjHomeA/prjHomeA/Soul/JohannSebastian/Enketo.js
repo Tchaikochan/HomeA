@@ -9,7 +9,7 @@ function initPage(){
     Questions.innerHTML +=
     `
     <div class="radio">
-    <hr class="hr3">
+        <hr class="hr3">
         <h4>Pergunta 1</h4>
         <h5>Alternativa 1</h5>
         <input type="radio" id="1" name="1" value="">
@@ -17,7 +17,7 @@ function initPage(){
         <input type="radio" id="2" name="1" value="">  
         <br /> 
         <button class="Add">Adicionar Alternativa</button>
-        </div>
+    </div>
     `
     EditName();
     if (Pool) {
@@ -83,7 +83,7 @@ Former.addEventListener("submit",e=>{
 });
 
 function Editer(element,V){
-    if (element.children[V].type != "radio" && !(element.children[V].classList.contains("Add"))) {
+    if (element.children[V].type != "radio" && !(element.children[V].classList.contains("Add")) && !(element.children[V].classList.contains("hr3"))) {
         element.children[V].addEventListener("click",e=>{
             var CB = document.createElement("input");
             var BTN = document.createElement("div");

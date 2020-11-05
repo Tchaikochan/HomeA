@@ -19,7 +19,7 @@ function initPage(){
         <br /> 
         <button class="Add">Adicionar Alternativa</button>
     </div>
-    `
+    `;
     EditName();
     if (Pool) {
         document.querySelector("#New").addEventListener("click",e=>{

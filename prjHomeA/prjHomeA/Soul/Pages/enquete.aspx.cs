@@ -32,8 +32,16 @@ namespace prjHomeA.Soul.Pages
                 return;
 
             }
+
+            int Counter = 0;
             Banco.openBar("localhost", "root", "root", "HomeA");
-            Banco.setCommand("INSERT INTO Enquete VALUES('" + Title + "','" + DS + "',CURRENT_TIME(),57)");
+            Banco.getCommand("SELECT * Enquete");
+            while (Banco.Selected.Read())
+            {
+                Counter++;
+
+            }
+            Banco.setCommand("INSERT INTO Enquete VALUES('" + Title + "','" + DS + "',CURRENT_TIME()," + Counter + ")");
 
         }
     }

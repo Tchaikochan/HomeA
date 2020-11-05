@@ -77,16 +77,19 @@ function EditName() {
 
 Former.addEventListener("submit",e=>{
     e.preventDefault();
+    let CounterStrike = 0;
+    let CS = "";
     let Title = (Former.children[0].children[1].value);
     let DS = (Former.children[1].children[1].value);
     [...Questions.children].forEach(e=>{
-        console.log(e.children[1].innerHTML);
+        CS += e.children[1].innerHTML + "☺" + CounterStrike + "☻";
+        CounterStrike++;
 
-    });/*
-    $.post("enquete.aspx",{t:Title,d:DS,c:Condominio},function(callbacku){
+    });
+    $.post("enquete.aspx",{t:Title,d:DS,c:Condominio,s:CS},function(callbacku){
         
         
-    });*/
+    });
 
 });
 

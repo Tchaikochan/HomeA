@@ -26,6 +26,12 @@ namespace prjHomeA.Soul.Pages
                 return;
 
             }
+            string CS = Request["s"].ToString();
+            if (CS == "" || CS == null)
+            {
+                return;
+
+            }
             string Condominio = Request["c"].ToString();
             if (Condominio == "" || Condominio == null)
             {

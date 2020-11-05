@@ -65,7 +65,6 @@ function EditName() {
                    
                     
                 }
-                console.log(element.children[V]);
                 Editer(element,V);
                 V++;        
                 C++;
@@ -80,15 +79,18 @@ Former.addEventListener("submit",e=>{
     e.preventDefault();
     let Title = (Former.children[0].children[1].value);
     let DS = (Former.children[1].children[1].value);
+    [...Questions.children].forEach(e=>{
+        console.log(e.children[1].innerHTML);
 
+    });/*
     $.post("enquete.aspx",{t:Title,d:DS,c:Condominio},function(callbacku){
         
         
-    });
+    });*/
 
 });
 
-function Editer(element,V){
+function Editer(element,V){     
     if (element.children[V].type != "radio" && !(element.children[V].classList.contains("Add")) && !(element.children[V].classList.contains("hr3"))) {
         element.children[V].addEventListener("click",e=>{
             var CB = document.createElement("input");
@@ -100,7 +102,6 @@ function Editer(element,V){
             `;
             CB.type = "text";
             CB.id = "ChangeASK";
-            console.log(element);
             BTN.id = `BTN`;
             let Kill = e.target;
             let NodeParent = Kill.parentNode;

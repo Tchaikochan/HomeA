@@ -5,25 +5,50 @@ var Altera = [];
 var C = 0;
 var Pool = true;
 var Condominio = "1";
+var isRunning = false;
+var Doug = false;
 
 function initPage(){
-    Questions.innerHTML +=
-    `
-    <div class="radio">
-        <hr class="hr3">
-        <h4>Pergunta 1</h4>
-        <h5>Alternativa 1</h5>
-        <input type="radio" id="1" name="1" value="">
-        <h5>Alternativa 2</h5>
-        <input type="radio" id="2" name="1" value="">  
-        <br /> 
-        <button class="Add">Adicionar Alternativa</button>
-    </div>
-    `;
-    EditName();
+    if (Doug) {
+        Questions.innerHTML +=
+        `
+        <div class="radio">
+            <hr class="hr3">
+            <h4>Pergunta</h4>
+            <h5>Alternativa</h5>
+            <input type="radio" id="1" name="1" value="">
+            <h5>Alternativa</h5>
+            <input type="radio" id="2" name="1" value="">  
+            <br /> 
+            <button class="Add">Adicionar Alternativa</button>
+        </div>
+        `;
+
+    } else{
+        Questions.innerHTML +=
+        `
+        <div class="radio">
+            <hr class="hr3">
+            <h4>Pergunta</h4>
+            <input type="text" />
+            <br /> 
+        </div>
+        `;
+
+    }
+        EditName();
+
     if (Pool) {
         document.querySelector("#New").addEventListener("click",e=>{
             Pool = false;
+            console.log(e);
+            if (e.target.classList.contains("NewOne")) {
+                Doug = true;
+
+            } else{
+                Doug = false;
+
+            }
             initPage();
             Pool = true;
 
@@ -75,21 +100,30 @@ function EditName() {
 
 }
 
+function Bot() {
+    isRunning = true;
+
+}
+
 Former.addEventListener("submit",e=>{
     e.preventDefault();
-    let CounterStrike = 0;
-    let CS = "";
-    let Title = (Former.children[0].children[1].value);
-    let DS = (Former.children[1].children[1].value);
-    [...Questions.children].forEach(e=>{
-        CS += e.children[1].innerHTML + "☺" + CounterStrike + "☻";
-        CounterStrike++;
+    if (isRunning) {
+        let CounterStrike = 0;
+        let CS = "";
+        let Title = (Former.children[0].children[1].value);
+        let DS = (Former.children[1].children[1].value);
+        [...Questions.children].forEach(e=>{
+            CS += e.children[1].innerHTML + "☺" + CounterStrike + "☻";
+            CounterStrike++;
+    
+        });
+        $.post("enquete.aspx",{t:Title,d:DS,c:Condominio,s:CS},function(callbacku){
+            alert("SOLTURA DO LULA!");
+            isRunning = false;
+            
+        });
 
-    });
-    $.post("enquete.aspx",{t:Title,d:DS,c:Condominio,s:CS},function(callbacku){
-        alert("SOLTURA DO LULA!");
-        
-    });
+    }
 
 });
 

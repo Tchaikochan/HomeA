@@ -96,6 +96,8 @@
     <Content Include="Soul\Pages\enquete.aspx" />
     <Content Include="Soul\Pages\enquete.html" />
     <Content Include="Soul\Pages\Fundodereserva.html" />
+    <Content Include="Soul\Pages\index.aspx" />
+    <Content Include="Soul\Pages\index.html" />
     <Content Include="Soul\Pages\Raiz.png" />
     <Content Include="Soul\Pages\reservar.aspx" />
     <Content Include="Soul\Pages\reservar.html" />
@@ -116,6 +118,13 @@
     </Compile>
     <Compile Include="Soul\Pages\enquete.aspx.designer.cs">
       <DependentUpon>enquete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Soul\Pages\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Soul\Pages\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Soul\Pages\reservar.aspx.cs">
       <DependentUpon>reservar.aspx</DependentUpon>

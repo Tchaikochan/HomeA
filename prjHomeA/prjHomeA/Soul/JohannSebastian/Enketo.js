@@ -95,7 +95,8 @@ Former.addEventListener("submit",e=>{
             }
            
             if (element.classList.contains("Altera")) {
-                console.log(element.innerHTML);  
+                Valorant++;
+                VL += element.innerHTML + "☺" + CounterStrike + "♥" + Valorant + "☻";
 
             }
  

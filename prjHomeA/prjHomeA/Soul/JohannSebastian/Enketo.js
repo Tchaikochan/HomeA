@@ -11,10 +11,10 @@ function initPage(){
     `
     <div class="radio">
         <hr class="hr3">
-        <h4>Pergunta 1</h4>
-        <h5>Alternativa 1</h5>
+        <h4 class="Shiro">Pergunta 1</h4>
+        <h5 class="Altera">Alternativa</h5>
         <input type="radio" id="1" name="1" value="">
-        <h5>Alternativa 2</h5>
+        <h5 class="Altera">Alternativa </h5>
         <input type="radio" id="2" name="1" value="">  
         <br /> 
         <button class="Add">Adicionar Alternativa</button>
@@ -44,13 +44,14 @@ function EditName() {
                         element.children[V].addEventListener("click",O=>{
                             let Killer = O.target;
                             let Mew = document.createElement("h5");
+                            Mew.classList.add("Altera");
                             let MewTwo = document.createElement("input");
                             let Hue = document.createElement("br");
                             MewTwo.type = "radio";
                             MewTwo.id = C;
                             MewTwo.name = C;
                             MewTwo.value = "";
-                            Mew.innerHTML = `Alternativa ${V}`;
+                            Mew.innerHTML = `Alternativa`;
                             Killer.parentNode.appendChild(Mew);
                             Killer.parentNode.appendChild(MewTwo);
                             Killer.parentNode.appendChild(Hue);
@@ -79,13 +80,30 @@ Former.addEventListener("submit",e=>{
     e.preventDefault();
     let CounterStrike = 0;
     let CS = "";
+    let VL = "";
+    let Valorant = 0;
     let Title = (Former.children[0].children[1].value);
     let DS = (Former.children[1].children[1].value);
     [...Questions.children].forEach(e=>{
-        CS += e.children[1].innerHTML + "☺" + CounterStrike + "☻";
-        CounterStrike++;
+        [...e.children].forEach(element => {
+            if (element.classList.contains("Shiro")){
+                CounterStrike++;
+                CS += element.innerHTML + "☺" + CounterStrike + "☻";
+                Valorant = 0;
+
+                
+            }
+           
+            if (element.classList.contains("Altera")) {
+                console.log(element.innerHTML);  
+
+            }
+ 
+
+        });
 
     });
+
     $.post("enquete.aspx",{t:Title,d:DS,c:Condominio,s:CS},function(callbacku){
         alert("SOLTURA DO LULA!");
         

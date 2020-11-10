@@ -32,6 +32,13 @@ namespace prjHomeA.Soul.Pages
                 return;
 
             }
+            string VL = Request["v"].ToString();
+            if (VL == "" || VL == null)
+            {
+                return;
+
+            }
+
             string Condominio = Request["c"].ToString();
             if (Condominio == "" || Condominio == null)
             {
@@ -47,10 +54,34 @@ namespace prjHomeA.Soul.Pages
                 Counter++;
 
             }
+
             Banco.Refresh();
             Banco.openBar();
             Banco.setCommand("INSERT INTO Enquete VALUES('" + Title + "','" + DS + "',CURRENT_TIME()," + Counter.ToString() + ");");
             Banco.Refresh();
+
+            string[] Yahoo = CS.Split('☻');
+            for (int i = 0; i < Yahoo.Length - 1; i++)
+            {
+                string Reich = Yahoo[i].Substring(0, Yahoo[i].IndexOf('☺'));
+                string Second = Yahoo[i].Substring(Yahoo[i].IndexOf('☺') + 1);
+                Banco.openBar();
+                Banco.setCommand("INSERT INTO Pergunta VALUES('" + Reich + "'," + Second + "," + Counter.ToString() + ");");
+                Banco.Refresh();
+
+            }
+
+            string[] Respostas = VL.Split('☻');
+            for (int i = 0; i < Respostas.Length - 1; i++)
+            {
+                string Reich = Respostas[i].Substring(0, Respostas[i].IndexOf('☺'));
+                string Second = Respostas[i].Substring(Respostas[i].IndexOf('☺') + 1, (Respostas[i].IndexOf('♥') - Respostas[i].IndexOf('☺') - 1));
+                string Third = Respostas[i].Substring(Respostas[i].IndexOf('♥') + 1);
+                Banco.openBar();
+                Banco.setCommand("INSERT INTO Alternativa VALUES(" + Third + ",'" + Reich + "'," + Second + "," + Counter.ToString() + ");");
+                Banco.Refresh();
+
+            }
 
         }
     }

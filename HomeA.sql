@@ -197,6 +197,15 @@ CREATE TABLE Aviso_Reclamacao(
   CONSTRAINT fk_Aviso_Reclamacao_Usuario FOREIGN KEY (nm_email_usuario, nm_senha_usuario, cd_tipo_usuario, cd_apartemanto, cd_condominio) REFERENCES Usuario (nm_email_usuario, nm_senha_usuario, cd_tipo_usuario, cd_apartemanto, cd_condominio)
 
 );
+
+CREATE TABLE Recuperar_Senha(
+	cd_recuperar_senha	INT,
+	nm_email_usuario	VARCHAR(45),
+	CONSTRAINT pk_Recuperar_Senha PRIMARY KEY (cd_recuperar_senha, nm_email_usuario),
+	CONSTRAINT fk_Recuperar_Senha FOREIGN KEY (nm_email_usuario) REFERENCES  Usuario (nm_email_usuario)
+
+);
+
 /*
 Insert into Aviso_Reclamacao values (TIME_FORMAT(Current_Date(), "%Y/%m/%d"), TIME_FORMAT(Current_Time(), "%h-%i-%s"), "O morador do 58 torce para o Santos.", 147842, 1, "Neymar@gmail.com", 0, 102, 0);
 

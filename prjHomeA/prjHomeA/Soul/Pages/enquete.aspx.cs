@@ -79,7 +79,7 @@ namespace prjHomeA.Soul.Pages
                 string Third = Respostas[i].Substring(Respostas[i].IndexOf('♥') + 1);
                 Banco.openBar();
                 Banco.setCommand("INSERT INTO Alternativa VALUES(" + Third + ",'" + Reich + "'," + Second + "," + Counter.ToString() + ");");
-                Banco.Refresh();
+                Banco.Refresh();    
 
             }
 

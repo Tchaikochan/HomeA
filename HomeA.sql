@@ -143,6 +143,7 @@ Insert into Usuario values ("michelcorleone@gmail.com", "Michel Corleone", "gang
 Insert into Usuario values ("Ronal@gmail.com", "Ronaldo Fenômeno", "souronaldo", 1, 2, 46);
 Insert into Usuario values ("davialencar@gmail.com", "Davi", "senha", 0, 1, 58);
 Insert into Usuario values ("Neymar@gmail.com", "Neymar Junior", "meninoney", 0, 0, 102);
+Insert into Usuario values ("gyoubomasataka@oniwa", "Gyoubu Masataka", "genichiro", 0, 4, 102);
 
 CREATE TABLE Resposta_Enquete(
 	nm_resposta_usuario TEXT,

@@ -120,6 +120,10 @@ Insert into Tipo_Usuario values (0, "Sindico");
 Insert into Tipo_Usuario values (1,"Proprietário");
 Insert into Tipo_Usuario values (2,"Morador");
 Insert into Tipo_Usuario values (3,"Funcionário");
+Insert into Tipo_Usuario values (4,"Aspirante Síndico");
+Insert into Tipo_Usuario values (5,"Aspirante Proprietário");
+Insert into Tipo_Usuario values (6,"Aspirante Morador");
+Insert into Tipo_Usuario values (7,"Aspirante Funcionário");
 
 
 CREATE TABLE Usuario (

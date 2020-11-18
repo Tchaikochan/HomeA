@@ -106,7 +106,7 @@ Former.addEventListener("submit",e=>{
     });
     console.log(VL);
     $.post("enquete.aspx",{t:Title,d:DS,c:Condominio,s:CS,v:VL},function(callbacku){
-        alert("SOLTURA DO LULA!");
+        document.location.reload(true);
         
     });
 

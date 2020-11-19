@@ -8,8 +8,8 @@ CREATE TABLE Condominio (
   CONSTRAINT pk_Condominio PRIMARY KEY (cd_condominio) 
 );
 
-Insert into Condominio values (0, "Condominio Clover");
-Insert into Condominio values (1, "Condominio Felicidade");
+Insert into Condominio values (000000, "Condominio Clover");
+Insert into Condominio values (000001, "Condominio Felicidade");
 
 CREATE TABLE Area_Lazer (
   cd_area_lazer INT,

@@ -90,38 +90,13 @@
     <Content Include="Soul\JohannSebastian\pace.min.js" />
     <Content Include="Soul\JohannSebastian\plugins.js" />
     <Content Include="Soul\JohannSebastian\Reservoir.js" />
-    <Content Include="Soul\Login_v1\css\main.css" />
-    <Content Include="Soul\Login_v1\css\util.css" />
-    <Content Include="Soul\Login_v1\images\icons\favicon.ico" />
-    <Content Include="Soul\Login_v1\images\img-01.png" />
-    <Content Include="Soul\Login_v1\index.aspx" />
-    <Content Include="Soul\Login_v1\index.html" />
-    <Content Include="Soul\Login_v1\js\main.js" />
-    <Content Include="Soul\Login_v1\vendor\animate\animate.css" />
-    <Content Include="Soul\Login_v1\vendor\bootstrap\css\bootstrap-grid.css" />
-    <Content Include="Soul\Login_v1\vendor\bootstrap\css\bootstrap-grid.min.css" />
-    <Content Include="Soul\Login_v1\vendor\bootstrap\css\bootstrap-reboot.css" />
-    <Content Include="Soul\Login_v1\vendor\bootstrap\css\bootstrap-reboot.min.css" />
-    <Content Include="Soul\Login_v1\vendor\bootstrap\css\bootstrap.css" />
-    <Content Include="Soul\Login_v1\vendor\bootstrap\css\bootstrap.min.css" />
-    <Content Include="Soul\Login_v1\vendor\bootstrap\js\bootstrap.js" />
-    <Content Include="Soul\Login_v1\vendor\bootstrap\js\bootstrap.min.js" />
-    <Content Include="Soul\Login_v1\vendor\bootstrap\js\popper.js" />
-    <Content Include="Soul\Login_v1\vendor\bootstrap\js\popper.min.js" />
-    <Content Include="Soul\Login_v1\vendor\bootstrap\js\tooltip.js" />
-    <Content Include="Soul\Login_v1\vendor\css-hamburgers\hamburgers.css" />
-    <Content Include="Soul\Login_v1\vendor\css-hamburgers\hamburgers.min.css" />
-    <Content Include="Soul\Login_v1\vendor\jquery\jquery-3.2.1.min.js" />
-    <Content Include="Soul\Login_v1\vendor\select2\select2.css" />
-    <Content Include="Soul\Login_v1\vendor\select2\select2.js" />
-    <Content Include="Soul\Login_v1\vendor\select2\select2.min.css" />
-    <Content Include="Soul\Login_v1\vendor\select2\select2.min.js" />
-    <Content Include="Soul\Login_v1\vendor\tilt\tilt.jquery.min.js" />
     <Content Include="Soul\Pages\blog.html" />
     <Content Include="Soul\Pages\despesas.html" />
     <Content Include="Soul\Pages\enquete.aspx" />
     <Content Include="Soul\Pages\enquete.html" />
     <Content Include="Soul\Pages\Fundodereserva.html" />
+    <Content Include="Soul\Pages\index.aspx" />
+    <Content Include="Soul\Pages\Index.html" />
     <Content Include="Soul\Pages\Raiz.png" />
     <Content Include="Soul\Pages\reservar.aspx" />
     <Content Include="Soul\Pages\reservar.html" />
@@ -136,19 +111,19 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Soul\Classes\DataBase.cs" />
-    <Compile Include="Soul\Login_v1\index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Soul\Login_v1\index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Soul\Pages\enquete.aspx.cs">
       <DependentUpon>enquete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Soul\Pages\enquete.aspx.designer.cs">
       <DependentUpon>enquete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Soul\Pages\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Soul\Pages\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Soul\Pages\reservar.aspx.cs">
       <DependentUpon>reservar.aspx</DependentUpon>
@@ -158,17 +133,7 @@
       <DependentUpon>reservar.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Soul\Login_v1\fonts\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Soul\Login_v1\vendor\bootstrap\css\bootstrap-grid.css.map" />
-    <None Include="Soul\Login_v1\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
-    <None Include="Soul\Login_v1\vendor\bootstrap\css\bootstrap-reboot.css.map" />
-    <None Include="Soul\Login_v1\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
-    <None Include="Soul\Login_v1\vendor\bootstrap\css\bootstrap.css.map" />
-    <None Include="Soul\Login_v1\vendor\bootstrap\css\bootstrap.min.css.map" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>

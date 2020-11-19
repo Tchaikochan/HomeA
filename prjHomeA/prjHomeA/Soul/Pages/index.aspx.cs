@@ -55,18 +55,8 @@ namespace prjHomeA.Soul.Pages
 
                 }
 
-                int Counter = 0;
                 Banco.openBar("localhost", "root", "root", "HomeA");
-                Banco.getCommand("SELECT * from Usuario");
-                while (Banco.Selected.Read())
-                {
-                    Counter++;
-
-                }
-
-                Banco.Refresh();
-                Banco.openBar();
-                Banco.setCommand("INSERT INTO Usuario VALUES('');");
+                Banco.setCommand("Insert into Usuario values ('" + Email + "', '" + Name + "', '" + Password + "'," + Condominio + "," + Funccao + ", " + Apartamento + ");");
                 Banco.Refresh();
 
 

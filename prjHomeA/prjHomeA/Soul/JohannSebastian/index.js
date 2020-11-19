@@ -1,4 +1,4 @@
-document.querySelector("#Formando").addEventListener("submit",e=>{
+document.querySelector("#FormLog").addEventListener("submit",e=>{
     e.preventDefault();
     let Email = document.querySelector("#MAIL");
     let Pass = document.querySelector("#PASSWORD");

@@ -14,14 +14,15 @@ namespace prjHomeA.Soul.Pages
         {
             DataBase Banco = new DataBase();
             bool isRunning = bool.Parse(Request["checker"]);
+            string Condominio = Request["c"].ToString();
+            if (Condominio == "" || Condominio == null)
+            {
+                return;
+
+            }
             if (isRunning)
             {
-                string Condominio = Request["c"].ToString();
-                if (Condominio == "" || Condominio == null)
-                {
-                    return;
-
-                }
+               
 
                 string Return = "";
                 Banco.openBar("localhost", "root", "root", "HomeA");
@@ -36,8 +37,20 @@ namespace prjHomeA.Soul.Pages
 
                 }
                 Banco.Refresh();
-                Response.Write(Return);    
+                Response.Write(Return);
 
+            }
+            else
+            {
+                string Return = "";
+                Banco.openBar("localhost", "root", "root", "HomeA");
+                Banco.getCommand("SELECT dt_Reserva, hr_Reserva, nm_Usuario, U.cd_apartemanto, nm_area_lazer from Reserva_Area_Lazer R join Usuario U on (U.cd_apartemanto = R.cd_apartemanto) join Area_Lazer A on (R.cd_area_lazer = A.cd_area_lazer) where U.cd_condominio = " + Condominio);
+                while (Banco.Selected.Read())
+                {
+                    Return += Banco.Selected["nm_area_lazer"].ToString() + "$" + Banco.Selected["dt_reserva"] + "#" + Banco.Selected["hr_reserva"] + "☺" + Banco.Selected["nm_usuario"] + "☻" + Banco.Selected["cd_apartemanto"];
+ 
+                }
+               
             }
 
 

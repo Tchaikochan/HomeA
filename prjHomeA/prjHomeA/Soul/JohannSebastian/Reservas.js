@@ -1,11 +1,12 @@
 ﻿window.onload = initPage;
-var isRunning = false;
+var isRunning = true;
 var Condominio = "1";
 
 function initPage(){
     $.post("Reservas.aspx",{checker:isRunning,c:Condominio},function(callbacku){
-        isRunning = true;
-        let former = document.createElement("div");
+        isRunning = false;
+        
+        var former = document.createElement("div");
         let Splinter = callbacku.split("#");
         Splinter.pop();
         Splinter.forEach(element => {
@@ -35,5 +36,9 @@ function initPage(){
         document.querySelector("#accordion").appendChild(former);
         
     });
+
+    $.post("Reservas.aspx",{checker:isRunning,c:Condominio},function(Carubacku){
+
+    }
 
 }

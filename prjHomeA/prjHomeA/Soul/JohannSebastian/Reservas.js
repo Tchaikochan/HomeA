@@ -16,32 +16,36 @@ function initPage(){
                 let Splinter = Carubacku.split("♥");
                 //Splinter.pop();
                 Splinter.forEach(C => {
-                    let Hora;
-                    Hora = C.substring(0, 10);
+                    
+                    let Condom = C.substring(0,C.substring(C.indexOf("♀") - 1))
+                    let Hora = C.substring(C.indexOf("♀"), C.indexOf("#"));
                     let Data  = C.substring(C.indexOf("#") + 1, C.indexOf("#") + 6);
                     let Nome = C.substring(C.indexOf("☺") + 1, C.indexOf("☻"));
                     let Aparter = C.substring(C.indexOf("☻") + 1);
                     console.log(Aparter);
                     console.log(C);
-                    former.innerHTML += 
-                `
-                <div class="card">
-                      <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
-                          <button class="btn btn-link" data-toggle="collapse" data-target="#collapse${Master[0]}" aria-expanded="true" aria-controls="collapseOne">
-                          ${Master[0]}
-                        </button>
-                        </h5>
-                      </div>
-                  
-                      <div id="collapse${Master[0]}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div class="card-body">
-                          Reservado por ${Nome} do apartamento ${Aparter} para o dia ${Hora} às ${Data}
-                        </div>
-                      </div>
-                    </div>
-                    <hr class="hr3">
-                `
+                    if (!Aparter == null || !Aparter == "" || Condom == Master[0]) {
+                        former.innerHTML += 
+                        `
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse${Master[0]}" aria-expanded="true" aria-controls="collapseOne">
+                                ${Master[0]}
+                                </button>
+                                </h5>
+                            </div>
+                        
+                            <div id="collapse${Master[0]}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card-body">
+                                Reservado por ${Nome} do apartamento ${Aparter} para o dia ${Hora} às ${Data}
+                                </div>
+                            </div>
+                            </div>
+                        `
+
+                    }
+                    
 
                 });
                 

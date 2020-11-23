@@ -17,9 +17,11 @@ function initPage(){
                 //Splinter.pop();
                 Splinter.forEach(C => {
                     let Hora;
-                    Hora = C.substring(0, 9);
-                    let Data  = C.substring(10, 16);
-                    console.log(Hora);
+                    Hora = C.substring(0, 10);
+                    let Data  = C.substring(C.indexOf("#") + 1, C.indexOf("#") + 6);
+                    let Nome = C.substring(C.indexOf("☺") + 1, C.indexOf("☻"));
+                    let Aparter = C.substring(C.indexOf("☻"), C.indexOf("♥") - 1);
+                    console.log(Data);
                     console.log(Splinter);
                     former.innerHTML += 
                 `
@@ -34,7 +36,7 @@ function initPage(){
                   
                       <div id="collapse${Master[0]}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                         <div class="card-body">
-                          Reservado por ${Hora} do apartamento 25, ${Hora} às ${Data}
+                          Reservado por ${Nome} do apartamento ${Aparter} para o dia ${Hora} às ${Data}
                         </div>
                       </div>
                     </div>

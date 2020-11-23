@@ -61,6 +61,31 @@ namespace prjHomeA.Soul.Pages
 
 
             } else {
+                string Email = Request["e"];
+                if (Email == "" || Email == null)
+                {
+                    return;
+
+                }
+
+                string Password = Request["p"];
+                if (Password == "" || Password == null)
+                {
+                    return;
+
+                }
+
+                Banco.openBar("localhost", "root", "root", "HomeA");
+                Banco.getCommand("SELECT * FROM Usuario");
+                while (Banco.Selected.Read())
+                {
+                    if (Banco.Selected["nm_email_usuario"].ToString() == Email && Banco.Selected["nm_senha_usuario"].ToString() == Password && Banco.Selected["cd_tipo_usuario"].ToString() == "0")
+                    {
+                        Response.Write("Sindical");
+
+                    }
+
+                }
 
             }
 

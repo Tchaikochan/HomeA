@@ -62,6 +62,7 @@
     <Content Include="Soul\CSS\heading.css" />
     <Content Include="Soul\CSS\main.css" />
     <Content Include="Soul\CSS\reservar.css" />
+    <Content Include="Soul\CSS\reservas.html" />
     <Content Include="Soul\CSS\suport.css" />
     <Content Include="Soul\CSS\vendor.css" />
     <Content Include="Soul\Image\app-screen-1400.png" />
@@ -100,6 +101,8 @@
     <Content Include="Soul\Pages\Raiz.png" />
     <Content Include="Soul\Pages\reservar.aspx" />
     <Content Include="Soul\Pages\reservar.html" />
+    <Content Include="Soul\Pages\reservas.html" />
+    <Content Include="Soul\Pages\Shome.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

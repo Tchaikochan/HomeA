@@ -1,0 +1,16 @@
+.card{
+    background-color: #636363;
+    width: relative;
+    height:relative;
+}
+
+.card-body{
+    background-color: #636363;
+    color: whitesmoke;
+}
+
+.hr3 {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent,#129450, transparent);  
+  }

@@ -20,9 +20,9 @@ function initPage(){
                     Hora = C.substring(0, 10);
                     let Data  = C.substring(C.indexOf("#") + 1, C.indexOf("#") + 6);
                     let Nome = C.substring(C.indexOf("☺") + 1, C.indexOf("☻"));
-                    let Aparter = C.substring(C.indexOf("☻"), C.indexOf("♥") - 1);
-                    console.log(Data);
-                    console.log(Splinter);
+                    let Aparter = C.substring(C.indexOf("☻") + 1);
+                    console.log(Aparter);
+                    console.log(C);
                     former.innerHTML += 
                 `
                 <div class="card">

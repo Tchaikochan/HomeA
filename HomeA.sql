@@ -105,9 +105,6 @@ CREATE TABLE Reserva_Area_Lazer(
 );
 
 Insert into Reserva_Area_Lazer values (DATE_FORMAT( "2019/12/21", "%Y/%m/%d" ), TIME_FORMAT("14:30:00", "%h:%i:%s"), 0, 14, 1);
-Insert into Reserva_Area_Lazer values (DATE_FORMAT( "2020/03/16", "%Y/%m/%d" ), TIME_FORMAT("21:00:00", "%h:%i:%s"), 1, 14, 1);
-Insert into Reserva_Area_Lazer values (DATE_FORMAT( "2020/07/04", "%Y/%m/%d" ), TIME_FORMAT("11:45:00", "%h:%i:%s"), 0, 58, 0);
-
 
 CREATE TABLE Tipo_Usuario(
   cd_tipo_usuario INT,

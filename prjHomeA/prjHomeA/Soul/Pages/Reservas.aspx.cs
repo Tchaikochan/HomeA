@@ -47,9 +47,10 @@ namespace prjHomeA.Soul.Pages
                 Banco.getCommand("SELECT dt_Reserva, hr_Reserva, nm_Usuario, U.cd_apartemanto, nm_area_lazer from Reserva_Area_Lazer R join Usuario U on (U.cd_apartemanto = R.cd_apartemanto) join Area_Lazer A on (R.cd_area_lazer = A.cd_area_lazer) where U.cd_condominio = " + Condominio);
                 while (Banco.Selected.Read())
                 {
-                    Return += Banco.Selected["nm_area_lazer"].ToString() + "$" + Banco.Selected["dt_reserva"] + "#" + Banco.Selected["hr_reserva"] + "☺" + Banco.Selected["nm_usuario"] + "☻" + Banco.Selected["cd_apartemanto"];
+                    Return += Banco.Selected["dt_reserva"].ToString() + "#" + Banco.Selected["hr_reserva"].ToString() + "☺" + Banco.Selected["nm_usuario"].ToString() + "☻" + Banco.Selected["cd_apartemanto"].ToString() + "♥";
  
                 }
+                Response.Write(Return);
                
             }
 

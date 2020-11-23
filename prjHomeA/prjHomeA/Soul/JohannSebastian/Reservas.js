@@ -16,9 +16,10 @@ function initPage(){
                 let Splinter = Carubacku.split("♥");
                 //Splinter.pop();
                 Splinter.forEach(C => {
-                    let Nome;
-                    Nome = C.substring(0, C.indexOf("$"));
-                    console.log(Nome);
+                    let Hora;
+                    Hora = C.substring(0, 9);
+                    let Data  = C.substring(10, 16);
+                    console.log(Hora);
                     console.log(Splinter);
                     former.innerHTML += 
                 `
@@ -33,7 +34,7 @@ function initPage(){
                   
                       <div id="collapse${Master[0]}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                         <div class="card-body">
-                          Reservado por ${Nome} do apartamento 25, 28/11 às 09:00
+                          Reservado por ${Hora} do apartamento 25, ${Hora} às ${Data}
                         </div>
                       </div>
                     </div>

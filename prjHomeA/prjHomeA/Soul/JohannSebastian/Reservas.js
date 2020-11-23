@@ -3,7 +3,7 @@ var isRunning = false;
 var Condominio = "1";
 
 function initPage(){
-    $.post("reservar.aspx",{checker:isRunning,c:Condominio},function(callbacku){
+    $.post("Reservas.aspx",{checker:isRunning,c:Condominio},function(callbacku){
         isRunning = true;
         let former = document.createElement("div");
         let Splinter = callbacku.split("#");
@@ -12,15 +12,27 @@ function initPage(){
             let Master = element.split("$");
             former.innerHTML += 
             `
-            <label class="container"><h4 class="h4r">${Master[0]}</h4>
-                <input type="checkbox" value="${Master[1]}">
-                <span class="checkmark"></span>
-            </label>
+            <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      ${Master[0]}
+                    </button>
+                    </h5>
+                  </div>
+              
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                      Reservado pelo Gabriel do apartamento 25, 28/11 às 09:00
+                    </div>
+                  </div>
+                </div>
+                <hr class="hr3">
             `
 
         });
         
-        document.querySelector("#Subete").appendChild(former);
+        document.querySelector("#accordion").appendChild(former);
         
     });
 

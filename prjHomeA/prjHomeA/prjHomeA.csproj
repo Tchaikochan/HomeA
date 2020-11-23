@@ -90,6 +90,7 @@
     <Content Include="Soul\JohannSebastian\modernizr.js" />
     <Content Include="Soul\JohannSebastian\pace.min.js" />
     <Content Include="Soul\JohannSebastian\plugins.js" />
+    <Content Include="Soul\JohannSebastian\Reservas.js" />
     <Content Include="Soul\JohannSebastian\Reservoir.js" />
     <Content Include="Soul\Pages\blog.html" />
     <Content Include="Soul\Pages\despesas.html" />
@@ -101,6 +102,7 @@
     <Content Include="Soul\Pages\Raiz.png" />
     <Content Include="Soul\Pages\reservar.aspx" />
     <Content Include="Soul\Pages\reservar.html" />
+    <Content Include="Soul\Pages\Reservas.aspx" />
     <Content Include="Soul\Pages\reservas.html" />
     <Content Include="Soul\Pages\Shome.html" />
     <Content Include="Web.config" />
@@ -134,6 +136,13 @@
     </Compile>
     <Compile Include="Soul\Pages\reservar.aspx.designer.cs">
       <DependentUpon>reservar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Soul\Pages\Reservas.aspx.cs">
+      <DependentUpon>Reservas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Soul\Pages\Reservas.aspx.designer.cs">
+      <DependentUpon>Reservas.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

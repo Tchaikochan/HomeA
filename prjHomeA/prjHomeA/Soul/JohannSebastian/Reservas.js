@@ -11,6 +11,11 @@ function initPage(){
         Splinter.pop();
         Splinter.forEach(element => {
             let Master = element.split("$");
+            
+            $.post("Reservas.aspx",{checker:isRunning,c:Condominio},function(Carubacku){
+
+            })
+
             former.innerHTML += 
             `
             <div class="card">
@@ -36,9 +41,5 @@ function initPage(){
         document.querySelector("#accordion").appendChild(former);
         
     });
-
-    $.post("Reservas.aspx",{checker:isRunning,c:Condominio},function(Carubacku){
-
-    }
 
 }

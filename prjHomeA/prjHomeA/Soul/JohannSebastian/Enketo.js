@@ -23,6 +23,7 @@ function initPage(){
     EditName();
     if (Pool) {
         document.querySelector("#New").addEventListener("click",e=>{
+            e.preventDefault();
             Pool = false;
             initPage();
             Pool = true;
@@ -42,6 +43,7 @@ function EditName() {
                 if (element.children[V].classList.contains("Add")){
                     if (Pool) {
                         element.children[V].addEventListener("click",O=>{
+                            O.preventDefault();
                             let Killer = O.target;
                             let Mew = document.createElement("h5");
                             Mew.classList.add("Altera");
@@ -115,6 +117,7 @@ Former.addEventListener("submit",e=>{
 function Editer(element,V){     
     if (element.children[V].type != "radio" && !(element.children[V].classList.contains("Add")) && !(element.children[V].classList.contains("hr3"))) {
         element.children[V].addEventListener("click",e=>{
+            e.preventDefault();
             var CB = document.createElement("input");
             var BTN = document.createElement("div");
             BTN.innerHTML = 
@@ -131,6 +134,7 @@ function Editer(element,V){
             Kill.parentNode.replaceChild(CB,Kill);
             element.appendChild(BTN);
             BTN.children[1].addEventListener("click",f=>{
+                preventDefault();
                 BTN.remove();        
                 if(CB.value == "" || CB.value == null) CB.parentNode.remove();
                 Kill.innerHTML = CB.value;

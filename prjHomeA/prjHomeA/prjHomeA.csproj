@@ -100,6 +100,7 @@
     <Content Include="Soul\Pages\index.aspx" />
     <Content Include="Soul\Pages\Index.html" />
     <Content Include="Soul\Pages\Raiz.png" />
+    <Content Include="Soul\Pages\Reclamações.html" />
     <Content Include="Soul\Pages\reservar.aspx" />
     <Content Include="Soul\Pages\reservar.html" />
     <Content Include="Soul\Pages\Reservas.aspx" />

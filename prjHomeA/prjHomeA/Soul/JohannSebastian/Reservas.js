@@ -18,7 +18,7 @@ function initPage(){
                 Splinter.forEach(C => {
                     
                     let Condom = C.substring(0,C.substring(C.indexOf("♀") - 1))
-                    let Hora = C.substring(C.indexOf("♀"), C.indexOf("#"));
+                    let Hora = C.substring(C.indexOf("♀") + 1, C.indexOf("♀") + 11);
                     let Data  = C.substring(C.indexOf("#") + 1, C.indexOf("#") + 6);
                     let Nome = C.substring(C.indexOf("☺") + 1, C.indexOf("☻"));
                     let Aparter = C.substring(C.indexOf("☻") + 1);

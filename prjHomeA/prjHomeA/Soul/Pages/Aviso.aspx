@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Aviso.aspx.cs" Inherits="prjHomeA.Soul.Pages.Aviso" %>

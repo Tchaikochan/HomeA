@@ -4,7 +4,7 @@ var Questions = Former.children[2];
 var Altera = [];
 var C = 0;
 var Pool = true;
-var Condominio = "1";
+var Condominio = window.sessionStorage.getItem('Condominio');
 
 function initPage(){
     Questions.innerHTML +=

@@ -78,27 +78,32 @@ namespace prjHomeA.Soul.Pages
                 Banco.openBar("localhost", "root", "root", "HomeA");
                 Banco.getCommand("SELECT * FROM Usuario");
                 string Valve;
+                string Steam;
                 while (Banco.Selected.Read())
                 {
                     Valve = Banco.Selected["cd_condominio"].ToString() + "&" + Banco.Selected["cd_apartemanto"].ToString();
                     if (Banco.Selected["nm_email_usuario"].ToString() == Email && Banco.Selected["nm_senha_usuario"].ToString() == Password && Banco.Selected["cd_tipo_usuario"].ToString() == "0")
                     {
-                        Response.Write("0" + Valve);
+                        Steam = "0" + Valve;
+                        Response.Write(Steam);
 
                     }
                     if (Banco.Selected["nm_email_usuario"].ToString() == Email && Banco.Selected["nm_senha_usuario"].ToString() == Password && Banco.Selected["cd_tipo_usuario"].ToString() == "1")
                     {
-                        Response.Write("1" + Valve);
+                        Steam = "1" + Valve;
+                        Response.Write(Steam);
 
                     }
                     if (Banco.Selected["nm_email_usuario"].ToString() == Email && Banco.Selected["nm_senha_usuario"].ToString() == Password && Banco.Selected["cd_tipo_usuario"].ToString() == "2")
                     {
-                        Response.Write("2" + Valve);
+                        Steam = "2" + Valve;
+                        Response.Write(Steam);
 
                     }
                     if (Banco.Selected["nm_email_usuario"].ToString() == Email && Banco.Selected["nm_senha_usuario"].ToString() == Password && Banco.Selected["cd_tipo_usuario"].ToString() == "3")
                     {
-                        Response.Write("3" + Valve);
+                        Steam = "3" + Valve;
+                        Response.Write(Steam);
 
                     }
 

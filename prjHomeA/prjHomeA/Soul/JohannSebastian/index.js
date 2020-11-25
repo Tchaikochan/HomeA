@@ -3,18 +3,20 @@ document.querySelector("#FormLog").addEventListener("submit",e=>{
     let Email = document.querySelector("#MAIL").value;
     let Pass = document.querySelector("#PASSWORD").value;
     $.post("index.aspx",{e:Email,p:Pass,c:true},function(callbacku){
-        window.sessionStorage.setItem('Condominio', 'valor');
+        console.log(callbacku);
+        window.sessionStorage.setItem('Condominio', callbacku.substring(1,callbacku.indexOf("&")));
+        
         if (callbacku.substring(0,1) == "0") {
-            window.location.href = "Shome.html";
+            //window.location.href = "Shome.html";
 
-        } if (callbacku.substring(0,1) == "1") {
-            window.location.href = "Shome.html";
+        } else if (callbacku.substring(0,1) == "1") {
+            //window.location.href = "Shome.html";
             
-        } if (callbacku.substring(0,1) == "2") {
-            window.location.href = "Shome.html";
+        } else if (callbacku.substring(0,1) == "2") {
+            //window.location.href = "Shome.html";
             
-        } if (callbacku.substring(0,1) == "3") {
-            window.location.href = "Fhome.html";
+        } else if (callbacku.substring(0,1) == "3") {
+            //window.location.href = "Fhome.html";
             
         } else {
             alert("Login Inválido");

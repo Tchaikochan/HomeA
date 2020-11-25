@@ -109,7 +109,7 @@ Former.addEventListener("submit",e=>{
     console.log(VL);
     $.post("enquete.aspx",{t:Title,d:DS,c:Condominio,s:CS,v:VL},function(callbacku){
         document.location.reload(true);
-        
+
     });
 
 });
@@ -134,15 +134,17 @@ function Editer(element,V){
             Kill.parentNode.replaceChild(CB,Kill);
             element.appendChild(BTN);
             BTN.children[1].addEventListener("click",f=>{
-                preventDefault();
+                f.preventDefault();
                 BTN.remove();        
                 if(CB.value == "" || CB.value == null) CB.parentNode.remove();
                 Kill.innerHTML = CB.value;
                 NodeParent.replaceChild(Kill,CB);
 
             });
+            
 
         });
+
     }
 
 }

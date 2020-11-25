@@ -1,6 +1,6 @@
 ﻿window.onload = initPage;
 var isRunning = false;
-var Condominio = "1";
+var Condominio = window.sessionStorage.getItem('Condominio');
 
 function initPage(){
     $.post("reservar.aspx",{checker:isRunning,c:Condominio},function(callbacku){

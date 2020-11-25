@@ -3,13 +3,24 @@ document.querySelector("#FormLog").addEventListener("submit",e=>{
     let Email = document.querySelector("#MAIL").value;
     let Pass = document.querySelector("#PASSWORD").value;
     $.post("index.aspx",{e:Email,p:Pass,c:true},function(callbacku){
-        if (callbacku == "Sindical") {
+        window.sessionStorage.setItem('Condominio', 'valor');
+        if (callbacku.substring(0,1) == "0") {
             window.location.href = "Shome.html";
 
-        } else{
+        } if (callbacku.substring(0,1) == "1") {
+            window.location.href = "Shome.html";
+            
+        } if (callbacku.substring(0,1) == "2") {
+            window.location.href = "Shome.html";
+            
+        } if (callbacku.substring(0,1) == "3") {
+            window.location.href = "Fhome.html";
+            
+        } else {
             alert("Login Inválido");
 
-        }
+        } 
+
         
     });
 

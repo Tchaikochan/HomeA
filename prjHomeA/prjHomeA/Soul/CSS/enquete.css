@@ -32,3 +32,11 @@ form {
 textarea{
     background-color: whitesmoke;
 }
+
+.radio{
+    border-style: solid;
+    border-width: 2px;
+    border-color: #129450;
+    border-radius: 70px;
+    background-color: rgb(80, 78, 78);
+}

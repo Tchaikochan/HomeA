@@ -92,6 +92,8 @@
     <Content Include="Soul\JohannSebastian\plugins.js" />
     <Content Include="Soul\JohannSebastian\Reservas.js" />
     <Content Include="Soul\JohannSebastian\Reservoir.js" />
+    <Content Include="Soul\Pages\Aviso.aspx" />
+    <Content Include="Soul\Pages\avisos.html" />
     <Content Include="Soul\Pages\blog.html" />
     <Content Include="Soul\Pages\despesas.html" />
     <Content Include="Soul\Pages\enquete.aspx" />
@@ -117,6 +119,13 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Soul\Classes\DataBase.cs" />
+    <Compile Include="Soul\Pages\Aviso.aspx.cs">
+      <DependentUpon>Aviso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Soul\Pages\Aviso.aspx.designer.cs">
+      <DependentUpon>Aviso.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Soul\Pages\enquete.aspx.cs">
       <DependentUpon>enquete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

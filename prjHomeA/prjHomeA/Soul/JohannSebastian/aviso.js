@@ -1,5 +1,15 @@
-Lista = document.querySelector("#Gessi");
-$.post("reservar.aspx",null,function(callbacku){
-    Lista.innerHTML = `<li>Dia 25 de novembro, iremos iniciar as obras nos dutos de gás.</li>`;
+window.onload = initPage;
 
-});
+function initPage(){
+    Lista = document.querySelector("#Gessi");
+    var Condominio = window.sessionStorage.getItem('Condominio');
+    $.post("Aviso.aspx",{c:Condominio},function(callbacku){
+        let Avisos;
+        Avisos = callbacku.split("☺");
+        Avisos.forEach(element => {
+            Lista.innerHTML += `<li>${element}</li>`;
+            
+        });
+
+    });
+}

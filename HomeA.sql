@@ -179,26 +179,22 @@ CREATE TABLE tipo_Aviso_Reclamacao(
 );
 
 
-Insert into tipo_Aviso_Reclamacao values (0, "Morador");
-Insert into tipo_Aviso_Reclamacao values (1, "Funcionario");
+Insert into tipo_Aviso_Reclamacao values (0, "Aviso");
+Insert into tipo_Aviso_Reclamacao values (1, "Reclamação");
 
 
 CREATE TABLE Aviso_Reclamacao(
   dt_Aviso_Reclamacao DATE,
-  hr_Aviso_Reclamacao TIME,
   ds_Aviso_Reclamacao TEXT,
   cd_protocolo_Aviso INT,
-  nm_senha_usuario VARCHAR(45),
   cd_tipo_Aviso_Reclamacao INT,
-  nm_email_usuario VARCHAR(45),
-  cd_tipo_usuario INT,
-  cd_apartemanto INT,
   cd_condominio INT,
-  PRIMARY KEY (cd_protocolo_aviso, cd_tipo_Aviso_Reclamacao, nm_email_usuario, nm_senha_usuario, cd_tipo_usuario, cd_apartemanto, cd_condominio),
-  CONSTRAINT fk_Aviso_Reclamacao_tipo_Aviso_Reclamacao FOREIGN KEY (cd_tipo_Aviso_Reclamacao) REFERENCES tipo_Aviso_Reclamacao (cd_tipo_Aviso_Reclamacao),
-  CONSTRAINT fk_Aviso_Reclamacao_Usuario FOREIGN KEY (nm_email_usuario, nm_senha_usuario, cd_tipo_usuario, cd_apartemanto, cd_condominio) REFERENCES Usuario (nm_email_usuario, nm_senha_usuario, cd_tipo_usuario, cd_apartemanto, cd_condominio)
+  PRIMARY KEY (cd_protocolo_aviso, cd_tipo_Aviso_Reclamacao, cd_condominio),
+  CONSTRAINT fk_Aviso_Reclamacao_tipo_Aviso_Reclamacao FOREIGN KEY (cd_tipo_Aviso_Reclamacao) REFERENCES tipo_Aviso_Reclamacao (cd_tipo_Aviso_Reclamacao)
 
 );
+
+INSERT INTO Aviso_Reclamacao VALUES (DATE_FORMAT( "2019/12/21", "%Y/%m/%d" ),'Ar-Condicionado do salão principal não funciona',0,0,1);
 
 CREATE TABLE Recuperar_Senha(
 	cd_recuperar_senha	INT,

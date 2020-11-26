@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ReclamaKi.aspx.cs" Inherits="prjHomeA.Soul.Pages.ReclamaKi" %>

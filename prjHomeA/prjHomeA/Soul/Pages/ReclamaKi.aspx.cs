@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using MySql.Data.MySqlClient;
+
+namespace prjHomeA.Soul.Pages
+{
+    public partial class ReclamaKi : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            DataBase Banco = new DataBase();
+            string Condominio = Request["co"];
+            if (Condominio == "" || Condominio == null)
+            {
+                return;
+
+            }
+            string Apartamento = Request["a"];
+            if (Apartamento == "" || Apartamento == null)
+            {
+                return;
+
+            }
+
+        }
+    }
+}

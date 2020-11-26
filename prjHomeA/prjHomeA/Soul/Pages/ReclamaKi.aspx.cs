@@ -13,18 +13,26 @@ namespace prjHomeA.Soul.Pages
         protected void Page_Load(object sender, EventArgs e)
         {
             DataBase Banco = new DataBase();
-            string Condominio = Request["co"];
-            if (Condominio == "" || Condominio == null)
+            string Title = Request["T"];
+            if (Title == "" || Title == null)
             {
                 return;
 
             }
-            string Apartamento = Request["a"];
-            if (Apartamento == "" || Apartamento == null)
+            string DS = Request["a"];
+            if (DS == "" || DS == null)
             {
                 return;
 
             }
+            Banco.getCommand("SELECT * From Aviso_Reclamacao WHERE cd_tipo_Aviso_Reclamacao = 1");
+            int Counter = 0;
+            while (Banco.Selected.Read())
+            {
+                Counter++;
+
+            }
+            Banco.setCommand("INSERT INTO Aviso_Reclamacao VALUES (DATE_FORMAT('2019/12/21', '%Y/%m/%d' ),'Ar-Condicionado do salão principal não funciona',0,1,1);");
 
         }
     }

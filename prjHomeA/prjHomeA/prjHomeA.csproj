@@ -102,6 +102,7 @@
     <Content Include="Soul\Pages\index.aspx" />
     <Content Include="Soul\Pages\Index.html" />
     <Content Include="Soul\Pages\Raiz.png" />
+    <Content Include="Soul\Pages\ReclamaKi.aspx" />
     <Content Include="Soul\Pages\Reclamações.html" />
     <Content Include="Soul\Pages\reservar.aspx" />
     <Content Include="Soul\Pages\reservar.html" />
@@ -139,6 +140,13 @@
     </Compile>
     <Compile Include="Soul\Pages\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Soul\Pages\ReclamaKi.aspx.cs">
+      <DependentUpon>ReclamaKi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Soul\Pages\ReclamaKi.aspx.designer.cs">
+      <DependentUpon>ReclamaKi.aspx</DependentUpon>
     </Compile>
     <Compile Include="Soul\Pages\reservar.aspx.cs">
       <DependentUpon>reservar.aspx</DependentUpon>

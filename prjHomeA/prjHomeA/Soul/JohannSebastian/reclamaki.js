@@ -6,4 +6,4 @@ document.querySelector("#Kimochi").addEventListener("submit",e=>{
 
     });
 
-});
+}); 

@@ -32,7 +32,7 @@ namespace prjHomeA.Soul.Pages
                 Counter++;
 
             }
-            Banco.setCommand("INSERT INTO Aviso_Reclamacao VALUES (DATE_FORMAT('2019/12/21', '%Y/%m/%d' ),'Ar-Condicionado do salão principal não funciona',0,1,1);");
+            Banco.setCommand("INSERT INTO Aviso_Reclamacao VALUES (CURRENT_DATE(),'Ar-Condicionado do salão principal não funciona',0,1,1);");
 
         }
     }

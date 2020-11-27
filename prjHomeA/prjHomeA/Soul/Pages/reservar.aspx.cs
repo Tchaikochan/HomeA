@@ -13,8 +13,8 @@ namespace prjHomeA.Soul.Pages
         protected void Page_Load(object sender, EventArgs e)
         {
             DataBase Banco = new DataBase();
-            bool isRunning = bool.Parse(Request["checker"]);
-            if (isRunning)
+            string isRunning = Request["checker"];
+            if (isRunning == "true")
             {
                 string DatingSim = Request["d"].ToString();
                 if (DatingSim == "" || DatingSim == null)
@@ -58,7 +58,7 @@ namespace prjHomeA.Soul.Pages
             }
             else
             {
-                string Condominio = Request["c"].ToString();
+                string Condominio = Request["c"];
                 if (Condominio == "" || Condominio == null)
                 {
                     return;

@@ -92,6 +92,16 @@ Insert into Apartamento values (46, 1, 1);
 Insert into Apartamento values (102, 2, 0);
 Insert into Apartamento values (58, 1, 0);
 Insert into Apartamento values (20, 1, 1);
+Insert into Apartamento values (23, 2, 1);
+Insert into Apartamento values (21, 1, 1);
+Insert into Apartamento values (22, 1, 1);
+Insert into Apartamento values (24, 1, 1);
+Insert into Apartamento values (25, 1, 1);
+Insert into Apartamento values (26, 1, 1);
+Insert into Apartamento values (27, 1, 1);
+Insert into Apartamento values (28, 1, 1);
+Insert into Apartamento values (29, 1, 1);
+Insert into Apartamento values (30, 1, 1);
 
 CREATE TABLE Reserva_Area_Lazer(
   dt_Reserva DATE,

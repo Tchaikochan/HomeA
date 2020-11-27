@@ -26,8 +26,12 @@ namespace prjHomeA.Soul.Pages
             string Secco = "";
             while (Banker.Selected.Read())
             {
-                Secco += Banker.Selected["nm_usuario"].ToString() + "☺" + Banker.Selected["nm_email_usuario"].ToString() + "☻" + Banker.Selected["cd_apartemanto"].ToString();
+                if (Banker.Selected["cd_tipo_usuario"].ToString() == "4" ||Banker.Selected["cd_tipo_usuario"].ToString() == "5" || Banker.Selected["cd_tipo_usuario"].ToString() == "6" || Banker.Selected["cd_tipo_usuario"].ToString() == "7")
+                {
+                                    Secco += Banker.Selected["nm_usuario"].ToString() + "☺" + Banker.Selected["nm_email_usuario"].ToString() + "☺" + Banker.Selected["cd_apartemanto"].ToString() + "♥";
                 
+                }
+
             }
             Response.Write(Secco);
 

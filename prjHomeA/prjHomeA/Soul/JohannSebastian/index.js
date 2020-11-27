@@ -10,10 +10,10 @@ document.querySelector("#FormLog").addEventListener("submit",e=>{
             window.location.href = "Shome.html";
 
         } else if (callbacku.substring(0,1) == "1") {
-            window.location.href = "Shome.html";
+            window.location.href = "Mhome.html";
             
         } else if (callbacku.substring(0,1) == "2") {
-            window.location.href = "Shome.html";
+            window.location.href = "Mhome.html";
             
         } else if (callbacku.substring(0,1) == "3") {
             window.location.href = "Fhome.html";

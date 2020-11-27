@@ -13,14 +13,23 @@ namespace prjHomeA.Soul.Pages
         protected void Page_Load(object sender, EventArgs e)
         {
             DataBase Banker = new DataBase();
+
+            string Condominio = Request["c"];
+            if (Condominio == "" || Condominio == null)
+            {
+                return;
+
+            }
+
             Banker.openBar("localhost", "root", "root", "HomeA");
             Banker.getCommand("SELECT * FROM Usuario");
             string Secco = "";
             while (Banker.Selected.Read())
             {
-                Secco += Banker.Selected["nm_usuario"] + "☺" + Banker.Selected["nm_email_usuario"] + "☻" + 
+                Secco += Banker.Selected["nm_usuario"].ToString() + "☺" + Banker.Selected["nm_email_usuario"].ToString() + "☻" + Banker.Selected["cd_apartemanto"].ToString();
                 
             }
+            Response.Write(Secco);
 
         }
     }

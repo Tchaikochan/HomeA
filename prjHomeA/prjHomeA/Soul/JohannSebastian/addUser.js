@@ -2,8 +2,9 @@ window.onload = initPage;
 
 
 function initPage(){
-    $.post("Reservas.aspx",{checker:isRunning,c:Condominio},function(Carubacku){
-        
+    var Condominio = window.sessionStorage.getItem('Condominio');
+    $.post("Reservas.aspx",{c:Condominio},function(Ciocollata){
+        console.log(Ciocollata);
 
     });
 

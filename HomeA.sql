@@ -10,6 +10,14 @@ CREATE TABLE Condominio (
 
 Insert into Condominio values (000000, "Condominio Clover");
 Insert into Condominio values (000001, "Condominio Felicidade");
+Insert into Condominio values (000002, "Condominio Alegria");
+Insert into Condominio values (000003, "Condominio Tristeza");
+Insert into Condominio values (000004, "Condominio Doce");
+Insert into Condominio values (000005, "Condominio Azul");
+Insert into Condominio values (000006, "Condominio MIBR");
+Insert into Condominio values (000007, "Condominio Animal");
+Insert into Condominio values (000008, "Condominio Radical");
+Insert into Condominio values (000009, "Edifício São Bernardo");
 
 CREATE TABLE Area_Lazer (
   cd_area_lazer INT,

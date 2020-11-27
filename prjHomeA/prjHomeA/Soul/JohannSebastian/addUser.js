@@ -9,7 +9,7 @@ function initPage(){
         console.log(GreenTea);
         GreenTea.pop();
         GreenTea.forEach(element => {
-            let Ashina = document.querySelector("#Ashina");
+            var Ashina = document.querySelector("#Ashina");
             console.log(element);
             let Oasis = element.split("☺");
             console.log(Oasis);
@@ -32,16 +32,13 @@ function initPage(){
 }
 
 function Accept() {
-    console.log("Douglas");
-let Gerald = document.querySelectorAll(".Accept");
-console.log([...Gerald]);
-[...Gerald].forEach(element => {
-    console.log("Ronaldo");
+ //console.log(Ashina.children);
+    [...Ashina.children].forEach(element => {
+        if (element.classList.contains("Accept")) {
+            console.log(element);
 
-    Gerald.addEventListener("click",e=>{
-        console.log("Ronaldo");
-        
+        }
+
     });
-});
 
 }

@@ -19,6 +19,9 @@ namespace prjHomeA.Soul.Pages
                 return;
 
             }
+
+            Banco.openBar("localhost", "root", "root", "HomeA");
+
             Banco.getCommand("SELECT * FROM Aviso_Reclamacao WHERE cd_condominio = " + Condominio);
             string Giorno = "";
                 while (Banco.Selected.Read())
@@ -30,7 +33,7 @@ namespace prjHomeA.Soul.Pages
 	                }
 
 	            }
-
+                Banco.Refresh();
                 Response.Write(Giorno);
 
         }

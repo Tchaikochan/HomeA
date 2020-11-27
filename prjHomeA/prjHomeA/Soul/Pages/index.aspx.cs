@@ -108,6 +108,7 @@ namespace prjHomeA.Soul.Pages
                     }
 
                 }
+                Banco.Refresh();
 
             }
 

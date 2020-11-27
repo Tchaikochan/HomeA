@@ -184,6 +184,7 @@ Insert into tipo_Aviso_Reclamacao values (1, "Reclamação");
 
 
 CREATE TABLE Aviso_Reclamacao(
+  nm_aviso_reclamacao	VARCHAR(90),
   dt_Aviso_Reclamacao DATE,
   ds_Aviso_Reclamacao TEXT,
   cd_protocolo_Aviso INT,
@@ -194,7 +195,7 @@ CREATE TABLE Aviso_Reclamacao(
 
 );
 
-INSERT INTO Aviso_Reclamacao VALUES (DATE_FORMAT( "2019/12/21", "%Y/%m/%d" ),'Ar-Condicionado do salão principal não funciona',0,0,1);
+INSERT INTO Aviso_Reclamacao VALUES ('Ar Condicionado com Defeito' , DATE_FORMAT( "2019/12/21", "%Y/%m/%d" ),'Ar-Condicionado do salão principal não funciona',0,0,1);
 
 CREATE TABLE Recuperar_Senha(
 	cd_recuperar_senha	INT,

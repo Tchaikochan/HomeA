@@ -35,19 +35,21 @@ function Accept() {
     [...Ashina.children].forEach(element => {
         [...element.children].forEach(e => {
             if (e.classList.contains("Accept")) {
+                console.log(e);
                 e.addEventListener("click",ev=>{
-                    console.log(e.parentNode);
+                    var Condominio = window.sessionStorage.getItem('Condominio');
                     $.post("acceptUser.aspx",{c:Condominio,v:"true",em:e.parentNode},function(Ciocollata){
-
+                        document.location.reload(true);
 
                     });
                 });
     
             } else if (e.classList.contains("Refuse")){
+                console.log(e);
                 e.addEventListener("click",ev=>{
-                    console.log(e.parentNode);
+                    var Condominio = window.sessionStorage.getItem('Condominio');
                     $.post("acceptUser.aspx",{c:Condominio,v:"false",em:e.parentNode},function(Ciocollata){
-
+                        document.location.reload(true);
 
                     });
 

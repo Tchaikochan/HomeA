@@ -12,7 +12,28 @@ namespace prjHomeA.Soul.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            DataBase Banker = new DataBase();
 
+            string Condominio = Request["c"];
+            if (Condominio == "" || Condominio == null)
+            {
+                return;
+
+            }
+            string Requester = Request["v"];
+            if (Requester == "" || Requester == null)
+            {
+                return;
+
+            }
+            string Email = Request["em"];
+            if (Email == "" || Email == null)
+            {
+                return;
+
+            }
+            Banker.openBar("localhost", "root", "root", "HomeA");
+            Banker.setCommand("UPDATE Usuario SET cd_tipo_usuario");
 
         }
     }

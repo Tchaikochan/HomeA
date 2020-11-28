@@ -32,11 +32,13 @@ function initPage(){
 }
 
 function Accept() {
+    let Striker = 0;
     [...Ashina.children].forEach(element => {
         [...element.children].forEach(e => {
+            Striker++;
             if (e.classList.contains("Accept")) {
                 console.log(e);
-                e.addEventListener("click",ev=>{
+                element.children[Striker].addEventListener("click",ev=>{
                     var Condominio = window.sessionStorage.getItem('Condominio');
                     $.post("acceptUser.aspx",{c:Condominio,v:"true",em:e.parentNode},function(Ciocollata){
                         document.location.reload(true);

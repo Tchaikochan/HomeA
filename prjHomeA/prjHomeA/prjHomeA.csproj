@@ -112,6 +112,7 @@
     <Content Include="Soul\Pages\Reservas.aspx" />
     <Content Include="Soul\Pages\reservas.html" />
     <Content Include="Soul\Pages\Shome.html" />
+    <Content Include="Soul\Pages\verReclama.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -178,6 +179,13 @@
     </Compile>
     <Compile Include="Soul\Pages\Reservas.aspx.designer.cs">
       <DependentUpon>Reservas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Soul\Pages\verReclama.aspx.cs">
+      <DependentUpon>verReclama.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Soul\Pages\verReclama.aspx.designer.cs">
+      <DependentUpon>verReclama.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

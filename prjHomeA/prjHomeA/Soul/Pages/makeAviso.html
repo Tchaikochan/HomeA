@@ -4,7 +4,7 @@
 
     <!--- basic page needs -->
     <meta charset="utf-8">
-    <title>HomeA - Reclamações</title>
+    <title>HomeA - Avisos</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -12,11 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSS-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/base.css">
     <link rel="stylesheet" href="../CSS/vendor.css">
     <link rel="stylesheet" href="../CSS/main.css">
-    <link rel="stylesheet" href="../CSS/Reclamações.css">
+    <link rel="stylesheet" href="../CSS/reclamações.css">
 
     <!-- script -->
     <script src="../JohannSebastian/modernizr.js"></script>
@@ -40,7 +39,7 @@
     <header class="s-header s-header--blog">
 
         <div class="header-logo">
-            <h3 class="subhead">Reclamações</h3>
+            <h3 class="subhead">Avisos</h3>
         </div>
 
         <nav class="row header-nav-wrap wide">
@@ -48,7 +47,6 @@
                 <li class="current"><a href=".html" title="blog">Ajuda</a></li>
                 <li class="current"><a href="" title="">sair</a></li>
             </ul>
-        </nav>
 
         <a class="header-menu-toggle" href="#"><span>Menu</span></a>
     
@@ -84,30 +82,30 @@
     
     <section class="blog-content-wrap">
         <center> 
-            <div id="accordion">
-                <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Reclamações
-                    </button>
-                    </h5>
-                  </div>
-              
-                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                    <div class="card-body">
-                        <ul id="Gessi">
-                      
-                        </ul>   
-                    </div>
-                  </div>
-                </div>
-                <hr class="hr3">
-                
-                </div>
-              </div>
+        <form>
+
+            <div>
+                <label for="nome"><h4>Título da Reclamação</h4></label>
+
+                <input type="text" id="enquete" name="titulo_enquete" />
+            </div>
+
+            <div>
+                <label for="msg"><h4>Descrição da Reclamação</h4></label>
+
+                <textarea id="msg" name="enquete_msg" ></textarea>
+            </div>
+            </form>
         
-        
+        <hr class="hr3">
+
+            <br>
+
+            <div class="button">
+                <button id="Kimochi" type="submit">Criar</button>
+            </div>
+        </section>
+        </form>
         </center>
         
                             
@@ -146,8 +144,8 @@
 
     <!-- Java Script  -->
     <script src="../JohannSebastian/jquery-3.5.1.min.js"></script>
-    <script src="../Image/plugins.js"></script>
+    <script src="../JohannSebastian/reclamaki.js"></script>
+    <script src="../JohannSebastian/plugins.js"></script>
     <script src="../JohannSebastian/main.js"></script>
-    <script src="../JohannSebastian/verReclama.js"></script>
 
 </body>

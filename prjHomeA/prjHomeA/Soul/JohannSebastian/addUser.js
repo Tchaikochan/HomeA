@@ -13,7 +13,7 @@ function initPage(){
         <div id="${Oasis[1]}">
             <h3 class="subhead">${Oasis[0]}</h3>
             <hr class="hr3">
-            <button class="Accept">Aceitar</button> <button id="Refuse">Recusar</button>
+            <button class="Accept">Aceitar</button> <button class="Refuse">Recusar</button>
             <ul class="acount" id="">
                 <p style="color: white;">E-mail: ${Oasis[1]}</p>
                 <p style="color: white;">Apartamento: ${Oasis[2]}</p>
@@ -37,10 +37,12 @@ function Accept() {
         [...element.children].forEach(e => {
             Striker++;
             if (e.classList.contains("Accept")) {
-                console.log(e);
-                e.outerHTML.addEventListener("click",ev=>{
+                e.addEventListener("click",ev=>{
+                    alert("Lulindo");
                     var Condominio = window.sessionStorage.getItem('Condominio');
-                    $.post("acceptUser.aspx",{c:Condominio,v:"true",em:e.parentNode},function(Ciocollata){
+                    let Disc = true;
+                    let MaMa = e.parentNode.id;
+                    $.post("acceptUser.aspx",{c:Condominio,v:Disc,em:MaMa},function(Ciocollata){
                         document.location.reload(true);
 
                     });
@@ -48,9 +50,11 @@ function Accept() {
     
             } else if (e.classList.contains("Refuse")){
                 console.log(e);
-                e.outerHTML.addEventListener("click",ev=>{
+                e.addEventListener("click",ev=>{
                     var Condominio = window.sessionStorage.getItem('Condominio');
-                    $.post("acceptUser.aspx",{c:Condominio,v:"false",em:e.parentNode},function(Ciocollata){
+                    let Disc = false;
+                    let MaMa = e.parentNode.id;
+                    $.post("acceptUser.aspx",{c:Condominio,v:Disc,em:MaMa},function(Ciocollata){
                         document.location.reload(true);
 
                     });

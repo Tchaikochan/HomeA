@@ -36,32 +36,46 @@ namespace prjHomeA.Soul.Pages
             Banker.openBar("localhost", "root", "root", "HomeA");
             if (Requester == "true")
             {
-                Banker.getCommand("SELECT * FROM Usuario WHERE nm_email_usuario = " + Email);
+                Banker.getCommand("SELECT * FROM Usuario WHERE nm_email_usuario = '" + Email + "'");
+                Banker.Selected.Read();
                 if (Banker.Selected["cd_tipo_usuario"].ToString() == "4")
                 {
-                    Banker.setCommand("UPDATE Usuario SET cd_tipo_usuario = 0 WHERE nm_email_usuario = " + Email);
+                    Banker.Refresh();
+                    Banker.openBar("localhost", "root", "root", "HomeA");
+                    Banker.setCommand("UPDATE Usuario SET cd_tipo_usuario = 0 WHERE nm_email_usuario = '" + Email + "'");
+                    Banker.Refresh();
 
                 }
                 else if (Banker.Selected["cd_tipo_usuario"].ToString() == "5")
                 {
-                    Banker.setCommand("UPDATE Usuario SET cd_tipo_usuario = 1 WHERE nm_email_usuario = " + Email);
+                    Banker.Refresh();
+                    Banker.openBar("localhost", "root", "root", "HomeA");
+                    Banker.setCommand("UPDATE Usuario SET cd_tipo_usuario = 1 WHERE nm_email_usuario = '" + Email + "'");
+                    Banker.Refresh();
 
                 }
                 else if (Banker.Selected["cd_tipo_usuario"].ToString() == "6")
                 {
-                    Banker.setCommand("UPDATE Usuario SET cd_tipo_usuario = 2 WHERE nm_email_usuario = " + Email);
+                    Banker.Refresh();
+                    Banker.openBar("localhost", "root", "root", "HomeA");
+                    Banker.setCommand("UPDATE Usuario SET cd_tipo_usuario = 2 WHERE nm_email_usuario = '" + Email + "'");
+                    Banker.Refresh();
 
                 }
                 else if (Banker.Selected["cd_tipo_usuario"].ToString() == "7")
                 {
-                    Banker.setCommand("UPDATE Usuario SET cd_tipo_usuario = 3 WHERE nm_email_usuario = " + Email);
+                    Banker.Refresh();
+                    Banker.openBar("localhost", "root", "root", "HomeA");
+                    Banker.setCommand("UPDATE Usuario SET cd_tipo_usuario = 3 WHERE nm_email_usuario = '" + Email + "'");
+                    Banker.Refresh();
 
                 }
 
             }
             else
             {
-                Banker.setCommand("DELETE FROM Usuario WHERE nm_email_usuario = " + Email);
+                Banker.setCommand("DELETE FROM Usuario WHERE nm_email_usuario = '" + Email + "'");
+                Banker.Refresh();
 
             }
             

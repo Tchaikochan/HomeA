@@ -6,6 +6,7 @@ function initPage(){
     $.post("Aviso.aspx",{c:Condominio},function(callbacku){
         let Avisos;
         Avisos = callbacku.split("☺");
+        Avisos.pop();   
         Avisos.forEach(element => {
             Lista.innerHTML += `<li>${element}</li>`;
             

@@ -38,7 +38,7 @@ function Accept() {
             Striker++;
             if (e.classList.contains("Accept")) {
                 console.log(e);
-                element.children[Striker].addEventListener("click",ev=>{
+                e.outerHTML.addEventListener("click",ev=>{
                     var Condominio = window.sessionStorage.getItem('Condominio');
                     $.post("acceptUser.aspx",{c:Condominio,v:"true",em:e.parentNode},function(Ciocollata){
                         document.location.reload(true);
@@ -48,7 +48,7 @@ function Accept() {
     
             } else if (e.classList.contains("Refuse")){
                 console.log(e);
-                e.addEventListener("click",ev=>{
+                e.outerHTML.addEventListener("click",ev=>{
                     var Condominio = window.sessionStorage.getItem('Condominio');
                     $.post("acceptUser.aspx",{c:Condominio,v:"false",em:e.parentNode},function(Ciocollata){
                         document.location.reload(true);

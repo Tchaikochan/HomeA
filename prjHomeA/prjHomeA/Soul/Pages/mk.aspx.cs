@@ -31,7 +31,7 @@ namespace prjHomeA.Soul.Pages
 
             }
             Banker.openBar("localhost", "root", "root", "HomeA");
-            Banker.getCommand("SELECT * From Aviso_Reclamacao WHERE cd_tipo_Aviso_Reclamacao = 1");
+            Banker.getCommand("SELECT * From Aviso_Reclamacao WHERE cd_tipo_Aviso_Reclamacao = 0");
             int Counter = 0;
             while (Banker.Selected.Read())
             {
@@ -40,7 +40,7 @@ namespace prjHomeA.Soul.Pages
             }
             Banker.Refresh();
             Banker.openBar("localhost", "root", "root", "HomeA");
-            Banker.setCommand("INSERT INTO Aviso_Reclamacao VALUES ('" + Title + "',CURRENT_DATE(),'" + DS + "'," + Counter + ",1," + Condominio + ");");
+            Banker.setCommand("INSERT INTO Aviso_Reclamacao VALUES ('" + Title + "',CURRENT_DATE(),'" + DS + "'," + Counter + ",0," + Condominio + ");");
             Banker.Refresh();
 
         }

@@ -122,7 +122,7 @@ CREATE TABLE Reserva_Area_Lazer(
   CONSTRAINT fk_Reserva_Area_Lazer_Apartamento FOREIGN KEY (cd_apartemanto) REFERENCES Apartamento (cd_apartemanto)
 );
 
-Insert into Reserva_Area_Lazer values (DATE_FORMAT( "2019/12/21", "%Y/%m/%d" ), TIME_FORMAT("14:30:00", "%h:%i:%s"), 0, 14, 1);
+Insert into Reserva_Area_Lazer values (DATE_FORMAT( "2019/12/21", "%Y/%m/%d" ), TIME_FORMAT("14:30:00", "%h:%i:%s"), 0, 58, 1);
 
 CREATE TABLE Tipo_Usuario(
   cd_tipo_usuario INT,

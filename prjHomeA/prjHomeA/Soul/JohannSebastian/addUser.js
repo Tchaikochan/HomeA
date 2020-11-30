@@ -38,7 +38,6 @@ function Accept() {
             Striker++;
             if (e.classList.contains("Accept")) {
                 e.addEventListener("click",ev=>{
-                    alert("Lulindo");
                     var Condominio = window.sessionStorage.getItem('Condominio');
                     let Disc = true;
                     let MaMa = e.parentNode.id;
@@ -49,7 +48,6 @@ function Accept() {
                 });
     
             } else if (e.classList.contains("Refuse")){
-                console.log(e);
                 e.addEventListener("click",ev=>{
                     var Condominio = window.sessionStorage.getItem('Condominio');
                     let Disc = false;

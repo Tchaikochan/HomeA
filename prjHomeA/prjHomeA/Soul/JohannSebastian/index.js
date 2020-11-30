@@ -3,7 +3,6 @@ document.querySelector("#FormLog").addEventListener("submit",e=>{
     let Email = document.querySelector("#MAIL").value;
     let Pass = document.querySelector("#PASSWORD").value;
     $.post("index.aspx",{e:Email,p:Pass,c:true},function(callbacku){
-        console.log(callbacku);
         window.sessionStorage.setItem('Condominio', callbacku.substring(1,callbacku.indexOf("&")));
         
         if (callbacku.substring(0,1) == "0") {
@@ -19,7 +18,7 @@ document.querySelector("#FormLog").addEventListener("submit",e=>{
             window.location.href = "Fhome.html";
             
         } else {
-            alert("Login Inválido");
+            document.location.reload(true);
 
         } 
 
@@ -36,7 +35,6 @@ document.querySelector("#InsertLog").addEventListener("submit",e=>{
     let Condominio = document.querySelector("#CONDONLOG").value;
     let Apartamento = document.querySelector("#APARTLOG").value;
     let Funccao = document.querySelector("#SELECTO").options[document.querySelector("#SELECTO").selectedIndex].value;
-    alert(Funccao);   
     $.post("index.aspx",{n:Name,e:Email,p:Pass,co:Condominio,a:Apartamento,f:Funccao,c:false},function(callbacku){
         document.location.reload(true);
         

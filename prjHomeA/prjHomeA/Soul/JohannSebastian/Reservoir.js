@@ -27,7 +27,7 @@ function initPage(){
 }
 
 document.querySelector("#Subete").addEventListener("submit",e=>{
-    e.preventDefault();
+    //e.preventDefault();
     let WhoChecked = "";
     let DatingSim = document.getElementById("Dating");
     console.log(DatingSim.value);
